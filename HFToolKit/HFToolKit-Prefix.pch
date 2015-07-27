@@ -1,0 +1,17 @@
+//
+//  HFToolKit-Prefix.pch
+//  HFToolKit
+//
+//  Created by crazylhf on 15/7/27.
+//  Copyright (c) 2015年 crazylhf. All rights reserved.
+//
+
+#ifndef HFToolKit_HFToolKit_Prefix_pch
+#define HFToolKit_HFToolKit_Prefix_pch
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
+
+#endif

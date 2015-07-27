@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D29BDAEC1B666C6E006F18B8 /* HFToolKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D29BDAEB1B666C6E006F18B8 /* HFToolKit.h */; };
+		D29BDAEE1B666C6E006F18B8 /* HFToolKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D29BDAED1B666C6E006F18B8 /* HFToolKit.m */; };
+		D29BDAF41B666C6E006F18B8 /* libHFToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29BDAE81B666C6E006F18B8 /* libHFToolKit.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D29BDAF51B666C6E006F18B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D29BDAE01B666C6E006F18B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D29BDAE71B666C6E006F18B8;
+			remoteInfo = HFToolKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D29BDAE61B666C6E006F18B8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				D29BDAEC1B666C6E006F18B8 /* HFToolKit.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D29BDAE81B666C6E006F18B8 /* libHFToolKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHFToolKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D29BDAEB1B666C6E006F18B8 /* HFToolKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HFToolKit.h; sourceTree = "<group>"; };
+		D29BDAED1B666C6E006F18B8 /* HFToolKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HFToolKit.m; sourceTree = "<group>"; };
+		D29BDAF31B666C6E006F18B8 /* HFToolKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HFToolKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D29BDAF91B666C6E006F18B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D29BDB031B666D2D006F18B8 /* HFToolKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HFToolKit-Info.plist"; sourceTree = "<group>"; };
+		D29BDB041B666D93006F18B8 /* HFToolKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HFToolKit-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D29BDAE51B666C6E006F18B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D29BDAF01B666C6E006F18B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29BDAF41B666C6E006F18B8 /* libHFToolKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D29BDADF1B666C6E006F18B8 = {
+			isa = PBXGroup;
+			children = (
+				D29BDAEA1B666C6E006F18B8 /* HFToolKit */,
+				D29BDAF71B666C6E006F18B8 /* HFToolKitTests */,
+				D29BDAE91B666C6E006F18B8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D29BDAE91B666C6E006F18B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D29BDAE81B666C6E006F18B8 /* libHFToolKit.a */,
+				D29BDAF31B666C6E006F18B8 /* HFToolKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D29BDAEA1B666C6E006F18B8 /* HFToolKit */ = {
+			isa = PBXGroup;
+			children = (
+				D29BDAEB1B666C6E006F18B8 /* HFToolKit.h */,
+				D29BDAED1B666C6E006F18B8 /* HFToolKit.m */,
+				D29BDB021B666D00006F18B8 /* Supporting Files */,
+			);
+			path = HFToolKit;
+			sourceTree = "<group>";
+		};
+		D29BDAF71B666C6E006F18B8 /* HFToolKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				D29BDAF81B666C6E006F18B8 /* Supporting Files */,
+			);
+			path = HFToolKitTests;
+			sourceTree = "<group>";
+		};
+		D29BDAF81B666C6E006F18B8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D29BDAF91B666C6E006F18B8 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D29BDB021B666D00006F18B8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D29BDB031B666D2D006F18B8 /* HFToolKit-Info.plist */,
+				D29BDB041B666D93006F18B8 /* HFToolKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D29BDAE71B666C6E006F18B8 /* HFToolKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D29BDAFC1B666C6E006F18B8 /* Build configuration list for PBXNativeTarget "HFToolKit" */;
+			buildPhases = (
+				D29BDAE41B666C6E006F18B8 /* Sources */,
+				D29BDAE51B666C6E006F18B8 /* Frameworks */,
+				D29BDAE61B666C6E006F18B8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HFToolKit;
+			productName = HFToolKit;
+			productReference = D29BDAE81B666C6E006F18B8 /* libHFToolKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D29BDAF21B666C6E006F18B8 /* HFToolKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D29BDAFF1B666C6E006F18B8 /* Build configuration list for PBXNativeTarget "HFToolKitTests" */;
+			buildPhases = (
+				D29BDAEF1B666C6E006F18B8 /* Sources */,
+				D29BDAF01B666C6E006F18B8 /* Frameworks */,
+				D29BDAF11B666C6E006F18B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D29BDAF61B666C6E006F18B8 /* PBXTargetDependency */,
+			);
+			name = HFToolKitTests;
+			productName = HFToolKitTests;
+			productReference = D29BDAF31B666C6E006F18B8 /* HFToolKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D29BDAE01B666C6E006F18B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = crazylhf;
+				TargetAttributes = {
+					D29BDAE71B666C6E006F18B8 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					D29BDAF21B666C6E006F18B8 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = D29BDAE31B666C6E006F18B8 /* Build configuration list for PBXProject "HFToolKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D29BDADF1B666C6E006F18B8;
+			productRefGroup = D29BDAE91B666C6E006F18B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D29BDAE71B666C6E006F18B8 /* HFToolKit */,
+				D29BDAF21B666C6E006F18B8 /* HFToolKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D29BDAF11B666C6E006F18B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D29BDAE41B666C6E006F18B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29BDAEE1B666C6E006F18B8 /* HFToolKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D29BDAEF1B666C6E006F18B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D29BDAF61B666C6E006F18B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D29BDAE71B666C6E006F18B8 /* HFToolKit */;
+			targetProxy = D29BDAF51B666C6E006F18B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D29BDAFA1B666C6E006F18B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HFToolKit/HFToolKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D29BDAFB1B666C6E006F18B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HFToolKit/HFToolKit-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D29BDAFD1B666C6E006F18B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D29BDAFE1B666C6E006F18B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D29BDB001B666C6E006F18B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HFToolKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D29BDB011B666C6E006F18B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HFToolKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D29BDAE31B666C6E006F18B8 /* Build configuration list for PBXProject "HFToolKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D29BDAFA1B666C6E006F18B8 /* Debug */,
+				D29BDAFB1B666C6E006F18B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D29BDAFC1B666C6E006F18B8 /* Build configuration list for PBXNativeTarget "HFToolKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D29BDAFD1B666C6E006F18B8 /* Debug */,
+				D29BDAFE1B666C6E006F18B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D29BDAFF1B666C6E006F18B8 /* Build configuration list for PBXNativeTarget "HFToolKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D29BDB001B666C6E006F18B8 /* Debug */,
+				D29BDB011B666C6E006F18B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D29BDAE01B666C6E006F18B8 /* Project object */;
+}
