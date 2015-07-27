@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D29BDAEC1B666C6E006F18B8 /* HFToolKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D29BDAEB1B666C6E006F18B8 /* HFToolKit.h */; };
 		D29BDAEE1B666C6E006F18B8 /* HFToolKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D29BDAED1B666C6E006F18B8 /* HFToolKit.m */; };
 		D29BDAF41B666C6E006F18B8 /* libHFToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29BDAE81B666C6E006F18B8 /* libHFToolKit.a */; };
 /* End PBXBuildFile section */
@@ -29,7 +28,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				D29BDAEC1B666C6E006F18B8 /* HFToolKit.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,12 +35,12 @@
 
 /* Begin PBXFileReference section */
 		D29BDAE81B666C6E006F18B8 /* libHFToolKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHFToolKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D29BDAEB1B666C6E006F18B8 /* HFToolKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HFToolKit.h; sourceTree = "<group>"; };
 		D29BDAED1B666C6E006F18B8 /* HFToolKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HFToolKit.m; sourceTree = "<group>"; };
 		D29BDAF31B666C6E006F18B8 /* HFToolKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HFToolKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29BDAF91B666C6E006F18B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D29BDB031B666D2D006F18B8 /* HFToolKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HFToolKit-Info.plist"; sourceTree = "<group>"; };
 		D29BDB041B666D93006F18B8 /* HFToolKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HFToolKit-Prefix.pch"; sourceTree = "<group>"; };
+		D29BDB061B6671AB006F18B8 /* HFToolKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFToolKit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				D29BDAEA1B666C6E006F18B8 /* HFToolKit */,
+				D29BDB051B667171006F18B8 /* Include */,
 				D29BDAF71B666C6E006F18B8 /* HFToolKitTests */,
 				D29BDAE91B666C6E006F18B8 /* Products */,
 			);
@@ -85,7 +84,6 @@
 		D29BDAEA1B666C6E006F18B8 /* HFToolKit */ = {
 			isa = PBXGroup;
 			children = (
-				D29BDAEB1B666C6E006F18B8 /* HFToolKit.h */,
 				D29BDAED1B666C6E006F18B8 /* HFToolKit.m */,
 				D29BDB021B666D00006F18B8 /* Supporting Files */,
 			);
@@ -115,6 +113,14 @@
 				D29BDB041B666D93006F18B8 /* HFToolKit-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D29BDB051B667171006F18B8 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				D29BDB061B6671AB006F18B8 /* HFToolKit.h */,
+			);
+			path = Include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
