@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		D29BDAEE1B666C6E006F18B8 /* HFToolKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D29BDAED1B666C6E006F18B8 /* HFToolKit.m */; };
 		D29BDAF41B666C6E006F18B8 /* libHFToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29BDAE81B666C6E006F18B8 /* libHFToolKit.a */; };
+		D2CB08F21BC8FCD800B7A761 /* HFLogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CB08F11BC8FCD800B7A761 /* HFLogUtil.m */; settings = {ASSET_TAGS = (); }; };
+		D2CB08F71BC9050600B7A761 /* HFLogTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CB08F61BC9050600B7A761 /* HFLogTypes.m */; settings = {ASSET_TAGS = (); }; };
+		D2CB08FE1BC909C300B7A761 /* HFLogStdOutWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CB08FD1BC909C300B7A761 /* HFLogStdOutWriter.m */; settings = {ASSET_TAGS = (); }; };
+		D2CB09011BC909D300B7A761 /* HFLogFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CB09001BC909D300B7A761 /* HFLogFileWriter.m */; settings = {ASSET_TAGS = (); }; };
+		D2DE60DB1BCBA0E6003A61EB /* NSDate+DisplayString.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60DA1BCBA0E6003A61EB /* NSDate+DisplayString.m */; settings = {ASSET_TAGS = (); }; };
+		D2DE60DF1BCBAC87003A61EB /* HFDeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60DE1BCBAC87003A61EB /* HFDeviceUtil.m */; settings = {ASSET_TAGS = (); }; };
+		D2DE60E21BCBACA1003A61EB /* HFSystemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60E11BCBACA1003A61EB /* HFSystemUtil.m */; settings = {ASSET_TAGS = (); }; };
+		D2DE60E51BCBACBE003A61EB /* HFAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60E41BCBACBE003A61EB /* HFAppHelper.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +49,23 @@
 		D29BDB031B666D2D006F18B8 /* HFToolKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HFToolKit-Info.plist"; sourceTree = "<group>"; };
 		D29BDB041B666D93006F18B8 /* HFToolKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HFToolKit-Prefix.pch"; sourceTree = "<group>"; };
 		D29BDB061B6671AB006F18B8 /* HFToolKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFToolKit.h; sourceTree = "<group>"; };
+		D2CB08EE1BC8F3B100B7A761 /* HFLogUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFLogUtil.h; sourceTree = "<group>"; };
+		D2CB08F11BC8FCD800B7A761 /* HFLogUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFLogUtil.m; sourceTree = "<group>"; };
+		D2CB08F61BC9050600B7A761 /* HFLogTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFLogTypes.m; sourceTree = "<group>"; };
+		D2CB08F81BC9061100B7A761 /* HFLogTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFLogTypes.h; sourceTree = "<group>"; };
+		D2CB08FC1BC909C300B7A761 /* HFLogStdOutWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFLogStdOutWriter.h; sourceTree = "<group>"; };
+		D2CB08FD1BC909C300B7A761 /* HFLogStdOutWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFLogStdOutWriter.m; sourceTree = "<group>"; };
+		D2CB08FF1BC909D300B7A761 /* HFLogFileWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFLogFileWriter.h; sourceTree = "<group>"; };
+		D2CB09001BC909D300B7A761 /* HFLogFileWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFLogFileWriter.m; sourceTree = "<group>"; };
+		D2CB09081BC90E0F00B7A761 /* HFCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFCommon.h; sourceTree = "<group>"; };
+		D2DE60D91BCBA0E6003A61EB /* NSDate+DisplayString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DisplayString.h"; sourceTree = "<group>"; };
+		D2DE60DA1BCBA0E6003A61EB /* NSDate+DisplayString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DisplayString.m"; sourceTree = "<group>"; };
+		D2DE60DD1BCBAC87003A61EB /* HFDeviceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFDeviceUtil.h; sourceTree = "<group>"; };
+		D2DE60DE1BCBAC87003A61EB /* HFDeviceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFDeviceUtil.m; sourceTree = "<group>"; };
+		D2DE60E01BCBACA1003A61EB /* HFSystemUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFSystemUtil.h; sourceTree = "<group>"; };
+		D2DE60E11BCBACA1003A61EB /* HFSystemUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSystemUtil.m; sourceTree = "<group>"; };
+		D2DE60E31BCBACBE003A61EB /* HFAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFAppHelper.h; sourceTree = "<group>"; };
+		D2DE60E41BCBACBE003A61EB /* HFAppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFAppHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +92,9 @@
 			children = (
 				D29BDAEA1B666C6E006F18B8 /* HFToolKit */,
 				D29BDB051B667171006F18B8 /* Include */,
+				D2CB08E71BC8C06D00B7A761 /* Log */,
+				D2CB08E81BC8C06D00B7A761 /* Security */,
+				D2DE60DC1BCBAC0E003A61EB /* Wanderers */,
 				D29BDAF71B666C6E006F18B8 /* HFToolKitTests */,
 				D29BDAE91B666C6E006F18B8 /* Products */,
 			);
@@ -119,8 +147,78 @@
 			isa = PBXGroup;
 			children = (
 				D29BDB061B6671AB006F18B8 /* HFToolKit.h */,
+				D2CB09081BC90E0F00B7A761 /* HFCommon.h */,
+				D2CB08EA1BC8C09900B7A761 /* Log */,
+				D2CB08EB1BC8C09900B7A761 /* Security */,
+				D2CB08E91BC8C09900B7A761 /* Extension */,
 			);
 			path = Include;
+			sourceTree = "<group>";
+		};
+		D2CB08E71BC8C06D00B7A761 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				D2CB08F41BC904F500B7A761 /* LogWriter */,
+				D2CB08F11BC8FCD800B7A761 /* HFLogUtil.m */,
+				D2CB08F61BC9050600B7A761 /* HFLogTypes.m */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		D2CB08E81BC8C06D00B7A761 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		D2CB08E91BC8C09900B7A761 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D2DE60D91BCBA0E6003A61EB /* NSDate+DisplayString.h */,
+				D2DE60DA1BCBA0E6003A61EB /* NSDate+DisplayString.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D2CB08EA1BC8C09900B7A761 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				D2CB08F81BC9061100B7A761 /* HFLogTypes.h */,
+				D2CB08EE1BC8F3B100B7A761 /* HFLogUtil.h */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		D2CB08EB1BC8C09900B7A761 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		D2CB08F41BC904F500B7A761 /* LogWriter */ = {
+			isa = PBXGroup;
+			children = (
+				D2CB08FC1BC909C300B7A761 /* HFLogStdOutWriter.h */,
+				D2CB08FD1BC909C300B7A761 /* HFLogStdOutWriter.m */,
+				D2CB08FF1BC909D300B7A761 /* HFLogFileWriter.h */,
+				D2CB09001BC909D300B7A761 /* HFLogFileWriter.m */,
+			);
+			path = LogWriter;
+			sourceTree = "<group>";
+		};
+		D2DE60DC1BCBAC0E003A61EB /* Wanderers */ = {
+			isa = PBXGroup;
+			children = (
+				D2DE60E31BCBACBE003A61EB /* HFAppHelper.h */,
+				D2DE60E41BCBACBE003A61EB /* HFAppHelper.m */,
+				D2DE60DD1BCBAC87003A61EB /* HFDeviceUtil.h */,
+				D2DE60DE1BCBAC87003A61EB /* HFDeviceUtil.m */,
+				D2DE60E01BCBACA1003A61EB /* HFSystemUtil.h */,
+				D2DE60E11BCBACA1003A61EB /* HFSystemUtil.m */,
+			);
+			path = Wanderers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +265,7 @@
 		D29BDAE01B666C6E006F18B8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = HF;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = crazylhf;
 				TargetAttributes = {
@@ -211,7 +310,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2DE60DF1BCBAC87003A61EB /* HFDeviceUtil.m in Sources */,
+				D2CB08F71BC9050600B7A761 /* HFLogTypes.m in Sources */,
+				D2DE60E51BCBACBE003A61EB /* HFAppHelper.m in Sources */,
+				D2DE60E21BCBACA1003A61EB /* HFSystemUtil.m in Sources */,
+				D2CB08F21BC8FCD800B7A761 /* HFLogUtil.m in Sources */,
 				D29BDAEE1B666C6E006F18B8 /* HFToolKit.m in Sources */,
+				D2CB08FE1BC909C300B7A761 /* HFLogStdOutWriter.m in Sources */,
+				D2DE60DB1BCBA0E6003A61EB /* NSDate+DisplayString.m in Sources */,
+				D2CB09011BC909D300B7A761 /* HFLogFileWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -308,7 +415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

@@ -15,6 +15,7 @@
 		D29BDB241B6671D8006F18B8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29BDB221B6671D8006F18B8 /* LaunchScreen.xib */; };
 		D29BDB301B6671D8006F18B8 /* HFToolKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D29BDB2F1B6671D8006F18B8 /* HFToolKitDemoTests.m */; };
 		D29BDB441B6672C7006F18B8 /* libHFToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29BDB411B66727E006F18B8 /* libHFToolKit.a */; };
+		D2DE60EA1BCBB216003A61EB /* NSDate+DisplayString.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60E91BCBB216003A61EB /* NSDate+DisplayString.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		D29BDB2F1B6671D8006F18B8 /* HFToolKitDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HFToolKitDemoTests.m; sourceTree = "<group>"; };
 		D29BDB391B667205006F18B8 /* HFToolKitDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HFToolKitDemo-Prefix.pch"; sourceTree = "<group>"; };
 		D29BDB3B1B66727E006F18B8 /* HFToolKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HFToolKit.xcodeproj; path = ../HFToolKit.xcodeproj; sourceTree = "<group>"; };
+		D2DE60E81BCBB216003A61EB /* NSDate+DisplayString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DisplayString.h"; sourceTree = "<group>"; };
+		D2DE60E91BCBB216003A61EB /* NSDate+DisplayString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DisplayString.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,7 @@
 		D29BDB121B6671D7006F18B8 /* HFToolKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D2DE60E71BCBB216003A61EB /* Extension */,
 				D29BDB171B6671D7006F18B8 /* AppDelegate.h */,
 				D29BDB181B6671D7006F18B8 /* AppDelegate.m */,
 				D29BDB1A1B6671D7006F18B8 /* ViewController.h */,
@@ -156,6 +160,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D2DE60E71BCBB216003A61EB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D2DE60E81BCBB216003A61EB /* NSDate+DisplayString.h */,
+				D2DE60E91BCBB216003A61EB /* NSDate+DisplayString.m */,
+			);
+			name = Extension;
+			path = ../../Include/Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,7 +214,7 @@
 		D29BDB081B6671D7006F18B8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = crazylhf;
 				TargetAttributes = {
 					D29BDB0F1B6671D7006F18B8 = {
@@ -279,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2DE60EA1BCBB216003A61EB /* NSDate+DisplayString.m in Sources */,
 				D29BDB1C1B6671D7006F18B8 /* ViewController.m in Sources */,
 				D29BDB191B6671D7006F18B8 /* AppDelegate.m in Sources */,
 				D29BDB161B6671D7006F18B8 /* main.m in Sources */,
@@ -344,6 +359,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -366,7 +382,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../Include/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -410,7 +426,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../Include/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -423,6 +439,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HFToolKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.crazylhf.enterprise.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -433,6 +450,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HFToolKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.crazylhf.enterprise.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -451,6 +469,7 @@
 				);
 				INFOPLIST_FILE = HFToolKitDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.crazylhf.enterprise.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HFToolKitDemo.app/HFToolKitDemo";
 			};
@@ -466,6 +485,7 @@
 				);
 				INFOPLIST_FILE = HFToolKitDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.crazylhf.enterprise.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HFToolKitDemo.app/HFToolKitDemo";
 			};

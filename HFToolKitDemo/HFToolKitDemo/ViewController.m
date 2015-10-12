@@ -8,15 +8,21 @@
 
 #import "ViewController.h"
 
+#import "HFLogUtil.h"
+
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    NSLog(@"test");
+    
+    HFLogi(@"XXX", @"test");
 }
 
 - (void)didReceiveMemoryWarning {
