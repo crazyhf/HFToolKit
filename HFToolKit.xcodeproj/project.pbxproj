@@ -17,6 +17,7 @@
 		D2DE60DF1BCBAC87003A61EB /* HFDeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60DE1BCBAC87003A61EB /* HFDeviceUtil.m */; settings = {ASSET_TAGS = (); }; };
 		D2DE60E21BCBACA1003A61EB /* HFSystemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60E11BCBACA1003A61EB /* HFSystemUtil.m */; settings = {ASSET_TAGS = (); }; };
 		D2DE60E51BCBACBE003A61EB /* HFAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60E41BCBACBE003A61EB /* HFAppHelper.m */; settings = {ASSET_TAGS = (); }; };
+		D2DE60EF1BCBC12F003A61EB /* HFFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60EE1BCBC12F003A61EB /* HFFileUtil.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D284D7B51BCD0135003808E2 /* HFInnerLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFInnerLog.h; sourceTree = "<group>"; };
 		D29BDAE81B666C6E006F18B8 /* libHFToolKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHFToolKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29BDAED1B666C6E006F18B8 /* HFToolKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HFToolKit.m; sourceTree = "<group>"; };
 		D29BDAF31B666C6E006F18B8 /* HFToolKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HFToolKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +68,8 @@
 		D2DE60E11BCBACA1003A61EB /* HFSystemUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSystemUtil.m; sourceTree = "<group>"; };
 		D2DE60E31BCBACBE003A61EB /* HFAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFAppHelper.h; sourceTree = "<group>"; };
 		D2DE60E41BCBACBE003A61EB /* HFAppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFAppHelper.m; sourceTree = "<group>"; };
+		D2DE60ED1BCBC12F003A61EB /* HFFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFFileUtil.h; sourceTree = "<group>"; };
+		D2DE60EE1BCBC12F003A61EB /* HFFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFFileUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 			children = (
 				D2CB08F41BC904F500B7A761 /* LogWriter */,
 				D2CB08F11BC8FCD800B7A761 /* HFLogUtil.m */,
+				D284D7B51BCD0135003808E2 /* HFInnerLog.h */,
 				D2CB08F61BC9050600B7A761 /* HFLogTypes.m */,
 			);
 			path = Log;
@@ -211,6 +216,8 @@
 		D2DE60DC1BCBAC0E003A61EB /* Wanderers */ = {
 			isa = PBXGroup;
 			children = (
+				D2DE60ED1BCBC12F003A61EB /* HFFileUtil.h */,
+				D2DE60EE1BCBC12F003A61EB /* HFFileUtil.m */,
 				D2DE60E31BCBACBE003A61EB /* HFAppHelper.h */,
 				D2DE60E41BCBACBE003A61EB /* HFAppHelper.m */,
 				D2DE60DD1BCBAC87003A61EB /* HFDeviceUtil.h */,
@@ -315,6 +322,7 @@
 				D2DE60E51BCBACBE003A61EB /* HFAppHelper.m in Sources */,
 				D2DE60E21BCBACA1003A61EB /* HFSystemUtil.m in Sources */,
 				D2CB08F21BC8FCD800B7A761 /* HFLogUtil.m in Sources */,
+				D2DE60EF1BCBC12F003A61EB /* HFFileUtil.m in Sources */,
 				D29BDAEE1B666C6E006F18B8 /* HFToolKit.m in Sources */,
 				D2CB08FE1BC909C300B7A761 /* HFLogStdOutWriter.m in Sources */,
 				D2DE60DB1BCBA0E6003A61EB /* NSDate+DisplayString.m in Sources */,

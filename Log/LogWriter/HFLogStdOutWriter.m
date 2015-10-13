@@ -10,7 +10,7 @@
 
 @implementation HFLogStdOutWriter
 
-- (void)openLogWriter:(id)option {}
+- (void)openLogWriter:(id)chickenRib {}
 
 - (void)closeLogWriter {}
 

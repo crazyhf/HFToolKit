@@ -10,7 +10,7 @@
 
 @interface HFLogFileWriter : HFLogStdOutWriter
 
-- (void)openLogWriter:(NSString *)logFilePath;
+- (void)openLogWriter:(NSString *)logPath;
 
 - (NSString *)currentLogFilePath;
 
