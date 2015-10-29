@@ -50,7 +50,7 @@
 
 /**
  *  @brief
- *      optional_log_block_t can't use to output the log content
+ *      optional_log_block_t can use to output the log content
  *      by means of customized method
  */
 typedef void (^optional_log_block_t)(HFLogContent * logContent);

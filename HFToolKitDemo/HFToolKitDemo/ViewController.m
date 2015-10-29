@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 #import "HFLogUtil.h"
+#import "HFDirectoryUtil.h"
 
 @interface ViewController ()
 
@@ -22,7 +23,17 @@
     
     NSLog(@"test");
     
-    HFLogi(@"XXX", @"test");
+    HFLogi(@"XXX", @"\n%@\n\n%@\n\n%@\n\n%@\n\n%@\n\n%@\n\n%@\n\n%@\n\n%@\n\n%@",
+           [HFDirectoryUtil HomeDirectory],
+           [HFDirectoryUtil TemporaryDirectory],
+           [HFDirectoryUtil DocumentsDirectory],
+           [HFDirectoryUtil MusicDirectory],
+           [HFDirectoryUtil MoviesDirectory],
+           [HFDirectoryUtil PicturesDirectory],
+           [HFDirectoryUtil DownloadsDirectory],
+           [HFDirectoryUtil LibraryDirectory],
+           [HFDirectoryUtil CachesDirectory],
+           [HFDirectoryUtil AppSupportDirectory]);
 }
 
 - (void)didReceiveMemoryWarning {
