@@ -11,6 +11,13 @@
 
 ///=================================================================
 
+#pragma mark - string macro
+
+#define ReverseDNSIdentify(_identify_) "com.crazylhf.hftoolkit."#_identify_
+
+
+///=================================================================
+
 #pragma mark - enum macro
 
 #define HF_ENUM_HEAD(_enum_type_, _enum_name_) \

@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "HFLogUtil.h"
+#import "HFDirectoryUtil.h"
+
 @interface AppDelegate ()
 
 @end
@@ -15,8 +18,10 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [HFLogUtil registerLogPath:self.HFToolKitLogDirectory];
+    
     return YES;
 }
 
@@ -40,6 +45,15 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (NSString *)HFToolKitLogDirectory
+{
+    static NSString * _log_directory = nil;
+    if (0 == _log_directory.length) {
+        _log_directory = [HFDirectoryUtil directoryInCaches:@"hftoolkit_log/"];
+    }
+    return _log_directory;
 }
 
 @end

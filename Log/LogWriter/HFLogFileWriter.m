@@ -12,11 +12,20 @@
 #import "HFSystemUtil.h"
 #import "NSDate+DisplayString.h"
 
+#define IHFLogDataCacheMaxSize       (1024)
+
+#define IHFLogDataFlushInterval      (10)
+
+
 @interface HFLogFileWriter()
 
 @property (nonatomic, strong) NSString * logFilePath;
 
+@property (nonatomic, strong) NSMutableData * logDataCache;
+
 @property (nonatomic, strong) NSFileHandle * logFileHandler;
+
+@property (nonatomic, strong) dispatch_queue_t logWriterQueue;
 
 @end
 
@@ -28,21 +37,32 @@
 {
     NSString * logFilePath = [self generateLogFilePath:logPath];
     if (![self.logFilePath isEqualToString:logFilePath]) {
-        self.logFilePath = logFilePath;
+        [self closeLogWriter];
         
         if (YES == [HFFileUtil createFile:logFilePath overwrite:NO]) {
-            [self.logFileHandler closeFile];
+            self.logFilePath = logFilePath;
             
             self.logFileHandler = [NSFileHandle fileHandleForWritingAtPath:logFilePath];
-            [self.logFileHandler seekToEndOfFile];
         }
+    } else if (nil == self.logFileHandler){
+        self.logFileHandler = [NSFileHandle fileHandleForWritingAtPath:logFilePath];
     }
 }
 
 - (void)closeLogWriter
 {
-    [self.logFileHandler closeFile];
-    self.logFileHandler = nil;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(recycleAsyncFlushLogCache) object:nil];
+    
+    [self asyncFlushLogCache];
+    
+    if (nil != self.logFileHandler) {
+        NSFileHandle * aLogFileHandler = self.logFileHandler;
+        dispatch_async(self.logWriterQueue, ^{
+            [aLogFileHandler closeFile];
+        });
+        
+        self.logFileHandler = nil;
+    }
 }
 
 
@@ -50,12 +70,40 @@
 
 - (void)log:(HFLogContent *)logContent
 {
-    [super log:logContent];
+    NSString * strContent = [NSString stringWithFormat:@"%@\n", logContent.formatString];
+    
+    [self.logDataCache appendBytes:strContent.UTF8String
+                            length:[strContent lengthOfBytesUsingEncoding:NSUTF8StringEncoding]];
+    
+    fprintf(stdout, "%s", strContent.UTF8String);
+    
+    if (self.logDataCache.length >= IHFLogDataCacheMaxSize) {
+        [self recycleAsyncFlushLogCache];
+    }
 }
 
-- (void)asyncFlushLogWriter
+- (void)recycleAsyncFlushLogCache
 {
-    ;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:_cmd object:nil];
+    
+    [self asyncFlushLogCache];
+    
+    [self performSelector:_cmd withObject:nil afterDelay:IHFLogDataFlushInterval];
+}
+
+- (void)asyncFlushLogCache
+{
+    if (nil != self.logFileHandler && 0 != self.logDataCache.length) {
+        NSData * logDataCopy = self.logDataCache.copy;
+        self.logDataCache = [NSMutableData dataWithCapacity:IHFLogDataCacheMaxSize];
+        
+        NSFileHandle * aLogFileHandler = self.logFileHandler;
+        dispatch_async(self.logWriterQueue, ^{
+            [aLogFileHandler seekToEndOfFile];
+            [aLogFileHandler writeData:logDataCopy];
+            [aLogFileHandler synchronizeFile];
+        });
+    }
 }
 
 
@@ -71,7 +119,21 @@
 
 - (NSString *)generateLogFilePath:(NSString *)logPath
 {
-    return [logPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%u/%@.log", [HFSystemUtil processID], [NSDate formatCurrentDate:@"yyyy_MM_dd_HH_mm_ss"]]];
+    return [logPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%u.log", [NSDate formatCurrentDate:@"yyyy_MM_dd/HH_mm_ss_SSS"], [HFSystemUtil processID]]];
+}
+
+
+#pragma mark - initialization
+
+- (id)init
+{
+    if (self = [super init]) {
+        self.logDataCache = [NSMutableData dataWithCapacity:IHFLogDataCacheMaxSize];
+        self.logWriterQueue = dispatch_queue_create(ReverseDNSIdentify(HFLogFileWriter_Queue), DISPATCH_QUEUE_SERIAL);
+        
+        [self recycleAsyncFlushLogCache];
+    }
+    return self;
 }
 
 @end
