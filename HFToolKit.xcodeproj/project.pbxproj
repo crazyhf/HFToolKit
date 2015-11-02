@@ -20,6 +20,10 @@
 		D2DE60DF1BCBAC87003A61EB /* HFDeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60DE1BCBAC87003A61EB /* HFDeviceUtil.m */; settings = {ASSET_TAGS = (); }; };
 		D2DE60E21BCBACA1003A61EB /* HFSystemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60E11BCBACA1003A61EB /* HFSystemUtil.m */; settings = {ASSET_TAGS = (); }; };
 		D2DE60E51BCBACBE003A61EB /* HFAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60E41BCBACBE003A61EB /* HFAppHelper.m */; settings = {ASSET_TAGS = (); }; };
+		D2F815081BE7722800CF500B /* HFTaskBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F815071BE7722800CF500B /* HFTaskBase.m */; settings = {ASSET_TAGS = (); }; };
+		D2F8150B1BE7723400CF500B /* HFTaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F8150A1BE7723400CF500B /* HFTaskQueue.m */; settings = {ASSET_TAGS = (); }; };
+		D2F815181BE7730E00CF500B /* HFHttpQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F815161BE7730E00CF500B /* HFHttpQueue.m */; settings = {ASSET_TAGS = (); }; };
+		D2F815191BE7730E00CF500B /* HFHttpTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F815171BE7730E00CF500B /* HFHttpTask.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,14 @@
 		D2DE60DE1BCBAC87003A61EB /* HFDeviceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFDeviceUtil.m; sourceTree = "<group>"; };
 		D2DE60E11BCBACA1003A61EB /* HFSystemUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSystemUtil.m; sourceTree = "<group>"; };
 		D2DE60E41BCBACBE003A61EB /* HFAppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFAppHelper.m; sourceTree = "<group>"; };
+		D2F815071BE7722800CF500B /* HFTaskBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTaskBase.m; sourceTree = "<group>"; };
+		D2F8150A1BE7723400CF500B /* HFTaskQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTaskQueue.m; sourceTree = "<group>"; };
+		D2F8150C1BE7725600CF500B /* HFTaskBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTaskBase.h; sourceTree = "<group>"; };
+		D2F8150D1BE7725600CF500B /* HFTaskQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTaskQueue.h; sourceTree = "<group>"; };
+		D2F815141BE7730000CF500B /* HFHttpQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpQueue.h; sourceTree = "<group>"; };
+		D2F815151BE7730000CF500B /* HFHttpTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpTask.h; sourceTree = "<group>"; };
+		D2F815161BE7730E00CF500B /* HFHttpQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpQueue.m; sourceTree = "<group>"; };
+		D2F815171BE7730E00CF500B /* HFHttpTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +144,10 @@
 				D29BDB051B667171006F18B8 /* Include */,
 				D2CB08E71BC8C06D00B7A761 /* Log */,
 				D239D0FF1BE1FDFA0081A973 /* File */,
+				D2F814E51BE70C1900CF500B /* Http */,
 				D2CB08E81BC8C06D00B7A761 /* Security */,
 				D2DE60DC1BCBAC0E003A61EB /* Wanderers */,
+				D2F815051BE771F900CF500B /* TaskQueue */,
 				D29BDAF71B666C6E006F18B8 /* HFToolKitTests */,
 				D29BDAE91B666C6E006F18B8 /* Products */,
 			);
@@ -189,9 +203,11 @@
 				D2CB09081BC90E0F00B7A761 /* HFCommon.h */,
 				D2CB08EA1BC8C09900B7A761 /* Log */,
 				D239D10C1BE209DD0081A973 /* File */,
+				D2F814E61BE70C3300CF500B /* Http */,
 				D2CB08EB1BC8C09900B7A761 /* Security */,
 				D2CB08E91BC8C09900B7A761 /* Extension */,
 				D239D10F1BE209DD0081A973 /* Wanderers */,
+				D2F815041BE771E100CF500B /* TaskQueue */,
 			);
 			path = Include;
 			sourceTree = "<group>";
@@ -260,6 +276,42 @@
 				D2DE60E11BCBACA1003A61EB /* HFSystemUtil.m */,
 			);
 			path = Wanderers;
+			sourceTree = "<group>";
+		};
+		D2F814E51BE70C1900CF500B /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				D2F815171BE7730E00CF500B /* HFHttpTask.m */,
+				D2F815161BE7730E00CF500B /* HFHttpQueue.m */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		D2F814E61BE70C3300CF500B /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				D2F815151BE7730000CF500B /* HFHttpTask.h */,
+				D2F815141BE7730000CF500B /* HFHttpQueue.h */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		D2F815041BE771E100CF500B /* TaskQueue */ = {
+			isa = PBXGroup;
+			children = (
+				D2F8150C1BE7725600CF500B /* HFTaskBase.h */,
+				D2F8150D1BE7725600CF500B /* HFTaskQueue.h */,
+			);
+			path = TaskQueue;
+			sourceTree = "<group>";
+		};
+		D2F815051BE771F900CF500B /* TaskQueue */ = {
+			isa = PBXGroup;
+			children = (
+				D2F815071BE7722800CF500B /* HFTaskBase.m */,
+				D2F8150A1BE7723400CF500B /* HFTaskQueue.m */,
+			);
+			path = TaskQueue;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,16 +403,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F8150B1BE7723400CF500B /* HFTaskQueue.m in Sources */,
 				D2DE60DF1BCBAC87003A61EB /* HFDeviceUtil.m in Sources */,
 				D2CB08F71BC9050600B7A761 /* HFLogTypes.m in Sources */,
 				D2DE60E51BCBACBE003A61EB /* HFAppHelper.m in Sources */,
 				D2DE60E21BCBACA1003A61EB /* HFSystemUtil.m in Sources */,
+				D2F815081BE7722800CF500B /* HFTaskBase.m in Sources */,
 				D2CB08F21BC8FCD800B7A761 /* HFLogUtil.m in Sources */,
 				D239D1021BE1FE3C0081A973 /* HFFileUtil.m in Sources */,
+				D2F815191BE7730E00CF500B /* HFHttpTask.m in Sources */,
 				D29BDAEE1B666C6E006F18B8 /* HFToolKit.m in Sources */,
 				D2CB08FE1BC909C300B7A761 /* HFLogStdOutWriter.m in Sources */,
 				D239D10B1BE2008A0081A973 /* HFDirectoryUtil.m in Sources */,
 				D2DE60DB1BCBA0E6003A61EB /* NSDate+DisplayString.m in Sources */,
+				D2F815181BE7730E00CF500B /* HFHttpQueue.m in Sources */,
 				D2CB09011BC909D300B7A761 /* HFLogFileWriter.m in Sources */,
 				D2142C5A1BE363FE00F8B8BF /* HFDigestHelper.m in Sources */,
 			);

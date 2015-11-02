@@ -9,8 +9,8 @@
 #import "ViewController.h"
 
 #import "HFLogUtil.h"
+#import "HFDeviceUtil.h"
 #import "HFDirectoryUtil.h"
-
 #import "HFDigestHelper.h"
 
 @interface ViewController ()
@@ -39,6 +39,8 @@
     
     HFLogi(@"XXX", @"aaa : %@", [HFDigestHelper SHA256HexHash:[NSData dataWithBytes:"aaa" length:3]]);
     HFLogi(@"XXX", @"aaa\\0bbb : %@", [HFDigestHelper MD5HexHash:[NSData dataWithBytes:"aaa\0bbb" length:7]]);
+    
+    HFLogi(@"XXX", @"%@, %@", @([HFDeviceUtil iphoneType]), [NSValue valueWithCGRect:[HFDeviceUtil screenBounds]]);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -18,7 +18,7 @@
 + (NSData *)MD2Hash:(NSData *)sourceData
 {
     unsigned char md2[CC_MD2_DIGEST_LENGTH];
-    CC_MD2(sourceData.bytes, sourceData.length, md2);
+    CC_MD2(sourceData.bytes, (CC_LONG)sourceData.length, md2);
     return [NSData dataWithBytes:md2 length:CC_MD2_DIGEST_LENGTH];
 }
 
@@ -30,7 +30,7 @@
 + (NSData *)MD4Hash:(NSData *)sourceData
 {
     unsigned char md4[CC_MD4_DIGEST_LENGTH];
-    CC_MD4(sourceData.bytes, sourceData.length, md4);
+    CC_MD4(sourceData.bytes, (CC_LONG)sourceData.length, md4);
     return [NSData dataWithBytes:md4 length:CC_MD4_DIGEST_LENGTH];
 }
 
@@ -42,7 +42,7 @@
 + (NSData *)MD5Hash:(NSData *)sourceData
 {
     unsigned char md5[CC_MD5_DIGEST_LENGTH];
-    CC_MD5(sourceData.bytes, sourceData.length, md5);
+    CC_MD5(sourceData.bytes, (CC_LONG)sourceData.length, md5);
     return [NSData dataWithBytes:md5 length:CC_MD5_DIGEST_LENGTH];
 }
 
@@ -57,7 +57,7 @@
 + (NSData *)SHA1Hash:(NSData *)sourceData
 {
     unsigned char sha1[CC_SHA1_DIGEST_LENGTH];
-    CC_SHA1(sourceData.bytes, sourceData.length, sha1);
+    CC_SHA1(sourceData.bytes, (CC_LONG)sourceData.length, sha1);
     return [NSData dataWithBytes:sha1 length:CC_SHA1_DIGEST_LENGTH];
 }
 
@@ -69,7 +69,7 @@
 + (NSData *)SHA224Hash:(NSData *)sourceData
 {
     unsigned char sha224[CC_SHA224_DIGEST_LENGTH];
-    CC_SHA224(sourceData.bytes, sourceData.length, sha224);
+    CC_SHA224(sourceData.bytes, (CC_LONG)sourceData.length, sha224);
     return [NSData dataWithBytes:sha224 length:CC_SHA224_DIGEST_LENGTH];
 }
 
@@ -81,7 +81,7 @@
 + (NSData *)SHA256Hash:(NSData *)sourceData
 {
     unsigned char sha256[CC_SHA256_DIGEST_LENGTH];
-    CC_SHA256(sourceData.bytes, sourceData.length, sha256);
+    CC_SHA256(sourceData.bytes, (CC_LONG)sourceData.length, sha256);
     return [NSData dataWithBytes:sha256 length:CC_SHA256_DIGEST_LENGTH];
 }
 
@@ -93,7 +93,7 @@
 + (NSData *)SHA384Hash:(NSData *)sourceData
 {
     unsigned char sha384[CC_SHA384_DIGEST_LENGTH];
-    CC_SHA384(sourceData.bytes, sourceData.length, sha384);
+    CC_SHA384(sourceData.bytes, (CC_LONG)sourceData.length, sha384);
     return [NSData dataWithBytes:sha384 length:CC_SHA384_DIGEST_LENGTH];
 }
 
@@ -105,7 +105,7 @@
 + (NSData *)SHA512Hash:(NSData *)sourceData
 {
     unsigned char sha512[CC_SHA512_DIGEST_LENGTH];
-    CC_SHA512(sourceData.bytes, sourceData.length, sha512);
+    CC_SHA512(sourceData.bytes, (CC_LONG)sourceData.length, sha512);
     return [NSData dataWithBytes:sha512 length:CC_SHA512_DIGEST_LENGTH];
 }
 
