@@ -6,7 +6,7 @@
 //  Copyright © 2015年 crazylhf. All rights reserved.
 //
 
-#import "HFTaskBase.m"
+#import "HFTaskBase.h"
 
 @interface HFHttpTask : HFTaskBase
 

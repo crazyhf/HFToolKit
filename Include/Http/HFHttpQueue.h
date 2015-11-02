@@ -6,7 +6,7 @@
 //  Copyright © 2015年 crazylhf. All rights reserved.
 //
 
-#import "HFTaskQueue.m"
+#import "HFTaskQueue.h"
 
 @interface HFHttpQueue : HFTaskQueue
 
