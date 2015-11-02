@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2142C5A1BE363FE00F8B8BF /* HFDigestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2142C591BE363FE00F8B8BF /* HFDigestHelper.m */; settings = {ASSET_TAGS = (); }; };
 		D239D1021BE1FE3C0081A973 /* HFFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D239D1011BE1FE3C0081A973 /* HFFileUtil.m */; settings = {ASSET_TAGS = (); }; };
 		D239D10B1BE2008A0081A973 /* HFDirectoryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D239D10A1BE2008A0081A973 /* HFDirectoryUtil.m */; settings = {ASSET_TAGS = (); }; };
 		D29BDAEE1B666C6E006F18B8 /* HFToolKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D29BDAED1B666C6E006F18B8 /* HFToolKit.m */; };
@@ -44,6 +45,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D2142C591BE363FE00F8B8BF /* HFDigestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFDigestHelper.m; sourceTree = "<group>"; };
+		D2142C5B1BE3642000F8B8BF /* HFDigestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFDigestHelper.h; sourceTree = "<group>"; };
 		D239D1011BE1FE3C0081A973 /* HFFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFFileUtil.m; sourceTree = "<group>"; };
 		D239D10A1BE2008A0081A973 /* HFDirectoryUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFDirectoryUtil.m; sourceTree = "<group>"; };
 		D239D10D1BE209DD0081A973 /* HFDirectoryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFDirectoryUtil.h; sourceTree = "<group>"; };
@@ -207,6 +210,7 @@
 		D2CB08E81BC8C06D00B7A761 /* Security */ = {
 			isa = PBXGroup;
 			children = (
+				D2142C591BE363FE00F8B8BF /* HFDigestHelper.m */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -232,6 +236,7 @@
 		D2CB08EB1BC8C09900B7A761 /* Security */ = {
 			isa = PBXGroup;
 			children = (
+				D2142C5B1BE3642000F8B8BF /* HFDigestHelper.h */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				D239D10B1BE2008A0081A973 /* HFDirectoryUtil.m in Sources */,
 				D2DE60DB1BCBA0E6003A61EB /* NSDate+DisplayString.m in Sources */,
 				D2CB09011BC909D300B7A761 /* HFLogFileWriter.m in Sources */,
+				D2142C5A1BE363FE00F8B8BF /* HFDigestHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

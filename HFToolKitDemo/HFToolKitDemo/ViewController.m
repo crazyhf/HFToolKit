@@ -11,6 +11,8 @@
 #import "HFLogUtil.h"
 #import "HFDirectoryUtil.h"
 
+#import "HFDigestHelper.h"
+
 @interface ViewController ()
 
 @end
@@ -34,6 +36,9 @@
            [HFDirectoryUtil LibraryDirectory],
            [HFDirectoryUtil CachesDirectory],
            [HFDirectoryUtil AppSupportDirectory]);
+    
+    HFLogi(@"XXX", @"aaa : %@", [HFDigestHelper SHA256HexHash:[NSData dataWithBytes:"aaa" length:3]]);
+    HFLogi(@"XXX", @"aaa\\0bbb : %@", [HFDigestHelper MD5HexHash:[NSData dataWithBytes:"aaa\0bbb" length:7]]);
 }
 
 - (void)didReceiveMemoryWarning {
