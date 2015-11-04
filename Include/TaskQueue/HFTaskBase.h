@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HFTaskBase : NSObject
+
+@interface HFTaskBase : NSObject <NSCopying>
+
+@property (nonatomic, weak) id(^actionParamBlock)(void);
+
+@property (nonatomic, strong) id(^actionBlock)(id actionParam);
+
+@property (nonatomic, strong) void(^finishedBlock)(id taskResult);
 
 @end

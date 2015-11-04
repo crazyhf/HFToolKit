@@ -10,4 +10,16 @@
 
 @implementation HFTaskBase
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    HFTaskBase * copyInstance = [HFTaskBase allocWithZone:zone];
+    if (nil != copyInstance)
+    {
+        copyInstance.actionParamBlock = self.actionParamBlock;
+        copyInstance.finishedBlock = self.finishedBlock;
+        copyInstance.actionBlock = self.actionBlock;
+    }
+    return copyInstance;
+}
+
 @end

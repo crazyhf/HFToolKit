@@ -8,6 +8,20 @@
 
 #import "HFHttpQueue.h"
 
+@interface HFHttpQueue()
+
+@property (nonatomic, strong) HFTaskQueue * concurrentQueue;
+
+@end
+
 @implementation HFHttpQueue
+
+- (id)init
+{
+    if (self = [super init]) {
+        self.concurrentQueue = [[HFTaskQueue alloc] initWithQueueType:HFTaskQueue_Concurrent finishedDispatch:dispatch_get_main_queue()];
+    }
+    return self;
+}
 
 @end

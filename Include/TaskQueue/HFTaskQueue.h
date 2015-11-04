@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "HFTaskBase.h"
 #import "HFCommon.h"
 
 HF_ENUM_HEAD(NSUInteger, HFTaskQueueType)
@@ -18,6 +19,9 @@ HF_ENUM_TAIL(HFTaskQueueType)
 
 @interface HFTaskQueue : NSObject
 
-- (id)initWithQueueType:(HFTaskQueueType)queueType;
+- (void)pushTask:(HFTaskBase *)taskBase;
+
+- (id)initWithQueueType:(HFTaskQueueType)queueType
+       finishedDispatch:(dispatch_queue_t)finishedQueue;
 
 @end
