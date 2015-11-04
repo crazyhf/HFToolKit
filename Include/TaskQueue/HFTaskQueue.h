@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#import "HFCommon.h"
+
+HF_ENUM_HEAD(NSUInteger, HFTaskQueueType)
+    HFTaskQueue_Serial,
+    HFTaskQueue_Concurrent,
+HF_ENUM_TAIL(HFTaskQueueType)
+
+
 @interface HFTaskQueue : NSObject
+
+- (id)initWithQueueType:(HFTaskQueueType)queueType;
 
 @end

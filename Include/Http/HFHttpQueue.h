@@ -8,6 +8,6 @@
 
 #import "HFTaskQueue.h"
 
-@interface HFHttpQueue : HFTaskQueue
+@interface HFHttpQueue : NSObject
 
 @end
