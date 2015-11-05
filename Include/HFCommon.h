@@ -35,6 +35,31 @@
 
 ///=================================================================
 
+#pragma mark - asset macro
+
+#if DEBUG
+#define HFAssetW(_expr_, _w_format_, ...) NSAssert((_expr_), (_w_format_), ##__VA_ARGS__)
+
+#define HFAssetE(_expr_, _e_format_, ...) NSAssert((_expr_), (_e_format_), ##__VA_ARGS__)
+#else
+#define HFAssetW(_expr_, _w_format_, ...) \
+            do {\
+                if (!(_expr_)) { \
+                    HFLogw(@"HFAssetW", (_w_format_), ##__VA_ARGS__); \
+                } \
+            } while(false)
+
+#define HFAssetE(_expr_, _e_format_, ...) \
+            do {\
+                if (!(_expr_)) { \
+                    HFLoge(@"HFAssetE", (_e_format_), ##__VA_ARGS__); \
+                } \
+            } while(false)
+#endif
+
+
+///=================================================================
+
 #pragma mark - singleton macro
 
 #define HF_DECLARE_SINGLETON() \

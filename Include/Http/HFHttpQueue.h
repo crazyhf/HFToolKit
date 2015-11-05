@@ -7,7 +7,12 @@
 //
 
 #import "HFTaskQueue.h"
+#import "HFHttpRequest.h"
 
 @interface HFHttpQueue : NSObject
+
+- (void)getRequest:(void(^)(HFHttpRequest *))requestBlock finished:(void(^)(id))finishedBlock;
+
+- (void)postRequest:(void(^)(HFHttpRequest *))requestBlock finished:(void(^)(id))finishedBlock;
 
 @end

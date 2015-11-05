@@ -16,6 +16,16 @@
 
 @implementation HFHttpQueue
 
+- (void)getRequest:(void(^)(HFHttpRequest *))requestBlock finished:(void(^)(id))finishedBlock
+{
+    ;
+}
+
+- (void)postRequest:(void(^)(HFHttpRequest *))requestBlock finished:(void(^)(id))finishedBlock
+{
+    ;
+}
+
 - (id)init
 {
     if (self = [super init]) {
