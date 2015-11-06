@@ -11,8 +11,10 @@
 
 @interface HFHttpQueue : NSObject
 
-- (void)getRequest:(void(^)(HFHttpRequest *))requestBlock finished:(void(^)(id))finishedBlock;
+- (void)addRequest:(void(^)(HFHttpRequest * httpRequest))requestBlock
+          finished:(void(^)(NSInteger respCode, NSData * respData, NSError * respErr))finishedBlock;
 
-- (void)postRequest:(void(^)(HFHttpRequest *))requestBlock finished:(void(^)(id))finishedBlock;
+
+HF_DECLARE_SINGLETON()
 
 @end

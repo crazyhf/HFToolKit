@@ -11,6 +11,7 @@
 		D21D3DD31BEB004800202FA9 /* HFHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D21D3DD21BEB004800202FA9 /* HFHttpRequest.m */; settings = {ASSET_TAGS = (); }; };
 		D239D1021BE1FE3C0081A973 /* HFFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D239D1011BE1FE3C0081A973 /* HFFileUtil.m */; settings = {ASSET_TAGS = (); }; };
 		D239D10B1BE2008A0081A973 /* HFDirectoryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D239D10A1BE2008A0081A973 /* HFDirectoryUtil.m */; settings = {ASSET_TAGS = (); }; };
+		D287571D1BECA82100FB728F /* HFHttpParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D287571C1BECA82100FB728F /* HFHttpParam.m */; settings = {ASSET_TAGS = (); }; };
 		D29BDAEE1B666C6E006F18B8 /* HFToolKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D29BDAED1B666C6E006F18B8 /* HFToolKit.m */; };
 		D29BDAF41B666C6E006F18B8 /* libHFToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29BDAE81B666C6E006F18B8 /* libHFToolKit.a */; };
 		D2CB08F21BC8FCD800B7A761 /* HFLogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CB08F11BC8FCD800B7A761 /* HFLogUtil.m */; settings = {ASSET_TAGS = (); }; };
@@ -24,7 +25,6 @@
 		D2F815081BE7722800CF500B /* HFTaskBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F815071BE7722800CF500B /* HFTaskBase.m */; settings = {ASSET_TAGS = (); }; };
 		D2F8150B1BE7723400CF500B /* HFTaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F8150A1BE7723400CF500B /* HFTaskQueue.m */; settings = {ASSET_TAGS = (); }; };
 		D2F815181BE7730E00CF500B /* HFHttpQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F815161BE7730E00CF500B /* HFHttpQueue.m */; settings = {ASSET_TAGS = (); }; };
-		D2F815191BE7730E00CF500B /* HFHttpTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F815171BE7730E00CF500B /* HFHttpTask.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +63,8 @@
 		D239D1111BE209DD0081A973 /* HFDeviceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFDeviceUtil.h; sourceTree = "<group>"; };
 		D239D1121BE209DD0081A973 /* HFSystemUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFSystemUtil.h; sourceTree = "<group>"; };
 		D284D7B51BCD0135003808E2 /* HFInnerLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFInnerLog.h; sourceTree = "<group>"; };
+		D28757191BECA80100FB728F /* HFHttpParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpParam.h; sourceTree = "<group>"; };
+		D287571C1BECA82100FB728F /* HFHttpParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpParam.m; sourceTree = "<group>"; };
 		D29BDAE81B666C6E006F18B8 /* libHFToolKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHFToolKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29BDAED1B666C6E006F18B8 /* HFToolKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HFToolKit.m; sourceTree = "<group>"; };
 		D29BDAF31B666C6E006F18B8 /* HFToolKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HFToolKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,9 +91,7 @@
 		D2F8150C1BE7725600CF500B /* HFTaskBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTaskBase.h; sourceTree = "<group>"; };
 		D2F8150D1BE7725600CF500B /* HFTaskQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFTaskQueue.h; sourceTree = "<group>"; };
 		D2F815141BE7730000CF500B /* HFHttpQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpQueue.h; sourceTree = "<group>"; };
-		D2F815151BE7730000CF500B /* HFHttpTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpTask.h; sourceTree = "<group>"; };
 		D2F815161BE7730E00CF500B /* HFHttpQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpQueue.m; sourceTree = "<group>"; };
-		D2F815171BE7730E00CF500B /* HFHttpTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,7 +285,7 @@
 		D2F814E51BE70C1900CF500B /* Http */ = {
 			isa = PBXGroup;
 			children = (
-				D2F815171BE7730E00CF500B /* HFHttpTask.m */,
+				D287571C1BECA82100FB728F /* HFHttpParam.m */,
 				D2F815161BE7730E00CF500B /* HFHttpQueue.m */,
 				D21D3DD21BEB004800202FA9 /* HFHttpRequest.m */,
 			);
@@ -295,8 +295,8 @@
 		D2F814E61BE70C3300CF500B /* Http */ = {
 			isa = PBXGroup;
 			children = (
-				D2F815151BE7730000CF500B /* HFHttpTask.h */,
 				D21D3DD41BEB038100202FA9 /* HFHttpTypes.h */,
+				D28757191BECA80100FB728F /* HFHttpParam.h */,
 				D2F815141BE7730000CF500B /* HFHttpQueue.h */,
 				D21D3DCF1BEB002F00202FA9 /* HFHttpRequest.h */,
 			);
@@ -413,13 +413,13 @@
 				D2F8150B1BE7723400CF500B /* HFTaskQueue.m in Sources */,
 				D2DE60DF1BCBAC87003A61EB /* HFDeviceUtil.m in Sources */,
 				D2CB08F71BC9050600B7A761 /* HFLogTypes.m in Sources */,
+				D287571D1BECA82100FB728F /* HFHttpParam.m in Sources */,
 				D2DE60E51BCBACBE003A61EB /* HFAppHelper.m in Sources */,
 				D21D3DD31BEB004800202FA9 /* HFHttpRequest.m in Sources */,
 				D2DE60E21BCBACA1003A61EB /* HFSystemUtil.m in Sources */,
 				D2F815081BE7722800CF500B /* HFTaskBase.m in Sources */,
 				D2CB08F21BC8FCD800B7A761 /* HFLogUtil.m in Sources */,
 				D239D1021BE1FE3C0081A973 /* HFFileUtil.m in Sources */,
-				D2F815191BE7730E00CF500B /* HFHttpTask.m in Sources */,
 				D29BDAEE1B666C6E006F18B8 /* HFToolKit.m in Sources */,
 				D2CB08FE1BC909C300B7A761 /* HFLogStdOutWriter.m in Sources */,
 				D239D10B1BE2008A0081A973 /* HFDirectoryUtil.m in Sources */,

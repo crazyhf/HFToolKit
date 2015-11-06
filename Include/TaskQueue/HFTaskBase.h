@@ -11,7 +11,7 @@
 
 @interface HFTaskBase : NSObject <NSCopying>
 
-@property (nonatomic, weak) id(^actionParamBlock)(void);
+@property (nonatomic, strong) id(^actionParamBlock)(void);
 
 @property (nonatomic, strong) id(^actionBlock)(id actionParam);
 

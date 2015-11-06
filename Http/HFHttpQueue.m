@@ -16,15 +16,26 @@
 
 @implementation HFHttpQueue
 
-- (void)getRequest:(void(^)(HFHttpRequest *))requestBlock finished:(void(^)(id))finishedBlock
+- (void)addRequest:(void(^)(HFHttpRequest *))requestBlock
+          finished:(void(^)(NSInteger, NSData *, NSError *))finishedBlock
 {
-    ;
+    HFTaskBase * httpTask = [[HFTaskBase alloc] init];
+    httpTask.actionParamBlock = (id)^(void){
+        return [[HFHttpRequest alloc] init];
+    };
+    httpTask.actionBlock = (id)^(HFHttpRequest * request) {
+        requestBlock(request);
+        return request;
+    };
+    httpTask.finishedBlock = ^(HFHttpRequest * request) {
+        finishedBlock(request.responseCode, request.responseData, request.responseError);
+    };
+    
+    [self.concurrentQueue pushTask:httpTask];
 }
 
-- (void)postRequest:(void(^)(HFHttpRequest *))requestBlock finished:(void(^)(id))finishedBlock
-{
-    ;
-}
+
+#pragma mark - singleton
 
 - (id)init
 {
@@ -33,5 +44,7 @@
     }
     return self;
 }
+
+HF_IMPLEMENTATION_SINGLETON()
 
 @end
