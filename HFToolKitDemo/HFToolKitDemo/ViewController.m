@@ -12,8 +12,14 @@
 #import "HFDeviceUtil.h"
 #import "HFDirectoryUtil.h"
 #import "HFDigestHelper.h"
+#import "HFTaskQueue.h"
+#import "HFHttpQueue.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) HFTaskQueue * serialQueue;
+
+@property (nonatomic, strong) HFTaskQueue * concurrentQueue;
 
 @end
 
@@ -37,10 +43,30 @@
            [HFDirectoryUtil CachesDirectory],
            [HFDirectoryUtil AppSupportDirectory]);
     
+    HFAssetW(1, @"xxxxxxx");
+    HFAssetE(1, @"1111111");
+    
     HFLogi(@"XXX", @"aaa : %@", [HFDigestHelper SHA256HexHash:[NSData dataWithBytes:"aaa" length:3]]);
     HFLogi(@"XXX", @"aaa\\0bbb : %@", [HFDigestHelper MD5HexHash:[NSData dataWithBytes:"aaa\0bbb" length:7]]);
     
     HFLogi(@"XXX", @"%@, %@", @([HFDeviceUtil iphoneType]), [NSValue valueWithCGRect:[HFDeviceUtil screenBounds]]);
+    
+    self.serialQueue = [[HFTaskQueue alloc] initWithQueueType:HFTaskQueue_Serial finishedDispatch:dispatch_get_main_queue()];
+    
+    self.concurrentQueue = [[HFTaskQueue alloc] initWithQueueType:HFTaskQueue_Concurrent finishedDispatch:dispatch_get_main_queue()];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+//    [[HFHttpQueue sharedInstance] addRequest:^(HFHttpRequest * httpRequest) {
+//        [httpRequest httpGET:@"http://localhost:8080/travel_2.jpg" param:nil];
+//    } finished:^(NSInteger respCode, NSData *respData, NSError *respErr) {
+//        UIImageView * aImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+//        aImageView.image = [UIImage imageWithData:respData];
+//        [self.view addSubview:aImageView];
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {

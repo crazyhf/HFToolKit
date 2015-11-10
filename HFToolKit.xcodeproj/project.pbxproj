@@ -11,6 +11,7 @@
 		D21D3DD31BEB004800202FA9 /* HFHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D21D3DD21BEB004800202FA9 /* HFHttpRequest.m */; settings = {ASSET_TAGS = (); }; };
 		D239D1021BE1FE3C0081A973 /* HFFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D239D1011BE1FE3C0081A973 /* HFFileUtil.m */; settings = {ASSET_TAGS = (); }; };
 		D239D10B1BE2008A0081A973 /* HFDirectoryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D239D10A1BE2008A0081A973 /* HFDirectoryUtil.m */; settings = {ASSET_TAGS = (); }; };
+		D2534E331BF1F3580001A9F6 /* HFEncodeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2534E321BF1F3580001A9F6 /* HFEncodeHelper.m */; settings = {ASSET_TAGS = (); }; };
 		D287571D1BECA82100FB728F /* HFHttpParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D287571C1BECA82100FB728F /* HFHttpParam.m */; settings = {ASSET_TAGS = (); }; };
 		D29BDAEE1B666C6E006F18B8 /* HFToolKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D29BDAED1B666C6E006F18B8 /* HFToolKit.m */; };
 		D29BDAF41B666C6E006F18B8 /* libHFToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29BDAE81B666C6E006F18B8 /* libHFToolKit.a */; };
@@ -62,6 +63,8 @@
 		D239D1101BE209DD0081A973 /* HFAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFAppHelper.h; sourceTree = "<group>"; };
 		D239D1111BE209DD0081A973 /* HFDeviceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFDeviceUtil.h; sourceTree = "<group>"; };
 		D239D1121BE209DD0081A973 /* HFSystemUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFSystemUtil.h; sourceTree = "<group>"; };
+		D2534E321BF1F3580001A9F6 /* HFEncodeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFEncodeHelper.m; sourceTree = "<group>"; };
+		D2534E341BF1F3780001A9F6 /* HFEncodeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFEncodeHelper.h; sourceTree = "<group>"; };
 		D284D7B51BCD0135003808E2 /* HFInnerLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFInnerLog.h; sourceTree = "<group>"; };
 		D28757191BECA80100FB728F /* HFHttpParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpParam.h; sourceTree = "<group>"; };
 		D287571C1BECA82100FB728F /* HFHttpParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpParam.m; sourceTree = "<group>"; };
@@ -231,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				D2142C591BE363FE00F8B8BF /* HFDigestHelper.m */,
+				D2534E321BF1F3580001A9F6 /* HFEncodeHelper.m */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -257,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				D2142C5B1BE3642000F8B8BF /* HFDigestHelper.h */,
+				D2534E341BF1F3780001A9F6 /* HFEncodeHelper.h */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -425,6 +430,7 @@
 				D239D10B1BE2008A0081A973 /* HFDirectoryUtil.m in Sources */,
 				D2DE60DB1BCBA0E6003A61EB /* NSDate+DisplayString.m in Sources */,
 				D2F815181BE7730E00CF500B /* HFHttpQueue.m in Sources */,
+				D2534E331BF1F3580001A9F6 /* HFEncodeHelper.m in Sources */,
 				D2CB09011BC909D300B7A761 /* HFLogFileWriter.m in Sources */,
 				D2142C5A1BE363FE00F8B8BF /* HFDigestHelper.m in Sources */,
 			);
