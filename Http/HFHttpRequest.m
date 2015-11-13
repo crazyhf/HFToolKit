@@ -12,7 +12,7 @@
 
 - (void)httpGET:(NSString *)httpUrl param:(HFHttpParam *)httpParam
 {
-    NSURL * requestURL = [NSURL URLWithString:httpUrl];
+    NSURL * requestURL = [NSURL URLWithString:[self spliceHttpUrl:httpUrl param:httpParam]];
     NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     
     NSError * error = nil;
@@ -27,6 +27,31 @@
 - (void)httpPOST:(NSString *)httpUrl param:(HFHttpParam *)httpParam
 {
     ;
+}
+
+
+#pragma mark - url utils
+
+- (NSString *)spliceHttpUrl:(NSString *)httpUrl param:(HFHttpParam *)httpParam
+{
+    NSMutableString * targetUrl = [NSMutableString stringWithFormat:@"%@", httpUrl];
+    if (0 != httpParam.paramDictionary.count)
+    {
+        NSDictionary * aDictionary  = httpParam.paramDictionary;
+        NSArray      * allParamKeys = aDictionary.allKeys;
+        
+        for (NSUInteger index = 0; index < allParamKeys.count; index++) {
+            NSString * aParamKey = allParamKeys[index];
+            NSObject * aParamVal = aDictionary[aParamKey];
+            
+            if (index > 0) {
+                [targetUrl appendFormat:@"&%@=%@", aParamKey, aParamVal];
+            } else {
+                [targetUrl appendFormat:@"?%@=%@", aParamKey, aParamVal];
+            }
+        }
+    }
+    return targetUrl;
 }
 
 @end

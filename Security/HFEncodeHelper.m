@@ -12,9 +12,13 @@
 
 #pragma mark - url encode/decode
 
+/**
+ *  reserved characters : = , ! $ & ' ( ) * + ; @ ? # : / [ ]
+ *  @see https://en.wikipedia.org/wiki/Percent-encoding
+ */
 + (NSString *)URLEncode:(NSString *)sourceString
 {
-    return CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)sourceString, NULL, CFSTR("￼=,!$&'()*+;@?\n\"<>#\t :/"), kCFStringEncodingUTF8));
+    return CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)sourceString, NULL, CFSTR(":/#@?&+=!;',[]()*$ \n\t\"<>%"), kCFStringEncodingUTF8));
 }
 
 + (NSString *)URLDecode:(NSString *)encodedString
