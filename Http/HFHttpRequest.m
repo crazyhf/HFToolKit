@@ -8,11 +8,21 @@
 
 #import "HFHttpRequest.h"
 
+#import "HFInnerLog.h"
+
+#import "HFEncodeHelper.h"
+
+
 @implementation HFHttpRequest
 
 - (void)httpGET:(NSString *)httpUrl param:(HFHttpParam *)httpParam
 {
-    NSURL * requestURL = [NSURL URLWithString:[self spliceHttpUrl:httpUrl param:httpParam]];
+    NSString * reqUrlString = [self spliceHttpUrl:httpUrl param:httpParam];
+    
+    HFInnerLogi(@"http get with real request url[%@], httpUrl[%@] param : %@ ",
+                reqUrlString, httpUrl, httpParam.paramDictionary);
+    
+    NSURL * requestURL = [NSURL URLWithString:reqUrlString];
     NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:requestURL];
     
     NSError * error = nil;
@@ -41,8 +51,8 @@
         NSArray      * allParamKeys = aDictionary.allKeys;
         
         for (NSUInteger index = 0; index < allParamKeys.count; index++) {
-            NSString * aParamKey = allParamKeys[index];
-            NSObject * aParamVal = aDictionary[aParamKey];
+            NSString * aParamKey = [HFEncodeHelper URLEncode:allParamKeys[index]];
+            NSString * aParamVal = [HFEncodeHelper URLEncode:aDictionary[aParamKey]];
             
             if (index > 0) {
                 [targetUrl appendFormat:@"&%@=%@", aParamKey, aParamVal];

@@ -10,14 +10,26 @@
 
 @interface HFHttpParam : NSObject
 
+/**
+ *  @attention must be @{NSString : NSString}
+ */
 - (id)initWithParamDictionary:(NSDictionary *)dictionary;
 
 
-- (NSDictionary *)paramDictionary;
+#pragma mark - add http param
 
-
+/**
+ *  @attention must be @{NSString : NSString}
+ */
 - (void)addParamDictionary:(NSDictionary *)dictionary;
 
 - (void)addFileParam:(NSString *)filePath paramKey:(NSString *)paramKey;
+
+- (void)addParamKey:(NSString *)paramKey paramValue:(NSString *)paramValue;
+
+
+#pragma mark - getter
+
+- (NSDictionary *)paramDictionary;
 
 @end

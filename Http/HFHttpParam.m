@@ -35,15 +35,7 @@
 }
 
 
-#pragma mark -
-
-- (NSDictionary *)paramDictionary
-{
-    return self.mutableParamDic;
-}
-
-
-#pragma mark -
+#pragma mark - add http param
 
 - (void)addParamDictionary:(NSDictionary *)dictionary
 {
@@ -53,6 +45,19 @@
 - (void)addFileParam:(NSString *)filePath paramKey:(NSString *)paramKey
 {
     ;
+}
+
+- (void)addParamKey:(NSString *)paramKey paramValue:(NSString *)paramValue
+{
+    [self.mutableParamDic setValue:paramValue forKey:paramKey];
+}
+
+
+#pragma mark - getter
+
+- (NSDictionary *)paramDictionary
+{
+    return self.mutableParamDic;
 }
 
 @end
