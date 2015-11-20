@@ -10,6 +10,7 @@
 
 #import "HFInnerLog.h"
 
+#import "HFRandomUtil.h"
 #import "HFEncodeHelper.h"
 
 
@@ -76,10 +77,7 @@
         NSString * encodedString = [self URLEncodeHttpParam:httpParam];
         [request setHTTPBody:[encodedString dataUsingEncoding:NSUTF8StringEncoding]];
     } else {
-        NSString * boundary = [NSString stringWithFormat:@"----------%lx", (unsigned long)([NSDate date].timeIntervalSince1970 * 1000)];
-        [request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary] forHTTPHeaderField:@"Content-Type"];
-        
-        /// ...
+        [self generateMultipartFormData:request httpPram:httpParam];
     }
     
     NSError * error = nil;
@@ -90,6 +88,55 @@
                                                       error:&error];
     _responseCode  = response.statusCode;
     _responseError = error;
+}
+
+
+#pragma mark - multipart/form-data
+
+- (void)generateMultipartFormData:(NSMutableURLRequest *)request httpPram:(HFHttpParam *)httpPram
+{
+    NSString * boundary = [NSString stringWithFormat:@"----------%@%lx", [HFRandomUtil randomAlphanumeric:10], (unsigned long)([NSDate date].timeIntervalSince1970 * 1000)];
+    
+    [request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary] forHTTPHeaderField:@"Content-Type"];
+    
+    NSString * fieldHead = [@"--" stringByAppendingString:boundary];
+    NSString * fieldEnd  = [boundary stringByAppendingString:@"--"];
+    
+    NSMutableData * entityData = [self multipartFormData:fieldHead httpParam:httpPram];
+    [entityData appendData:[fieldEnd dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [request setHTTPBody:entityData];
+}
+
+
+/**
+ *  multipart/form-data format
+ *
+ *     --boundary\r\n
+ *     Content-Disposition: form-data; name="xxx"\r\n
+ *     \r\n
+ *     yyy\r\n
+ *     --boundary\r\n
+ *     Content-Disposition: form-data; name="xxx"; filename="xxx.xxx"\r\n
+ *     Content-Type: text/plain\r\n
+ *     \r\n
+ *     .....
+ *     .....\r\n
+ *     --boundary--
+ *
+ *  Content-Type definition
+ *     Content-Type = "Content-Type" ":" media-type
+ *     media-type   = type "/" subtype *( ";" parameter )
+ *     type = 'text' | 'image' | 'video' | 'audio' | 'application'
+ *     subtype = 'plain' | 'html' | 'xml'
+ *             | 'png' | 'jpeg' | 'gif'
+ *             | 'mpeg4' | 'mpeg' | 'mpg' | 'avi' | 'x-ms-wmv'
+ *             | 'mp1' | 'mp2' | 'mp3' | 'mid' | 'wav' | 'aiff'
+ *             | 'octet-stream'
+ */
+- (NSMutableData *)multipartFormData:(NSString *)fieldHead httpParam:(HFHttpParam *)httpPram
+{
+    return nil;
 }
 
 
