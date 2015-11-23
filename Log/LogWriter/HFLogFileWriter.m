@@ -72,10 +72,12 @@
 {
     NSString * strContent = [NSString stringWithFormat:@"%@\n", logContent.formatString];
     
-    [self.logDataCache appendBytes:strContent.UTF8String
-                            length:[strContent lengthOfBytesUsingEncoding:NSUTF8StringEncoding]];
-    
     fprintf(stdout, "%s", strContent.UTF8String);
+    
+    if (YES == [self isPermitted:logContent]) {
+        [self.logDataCache appendBytes:strContent.UTF8String
+                                length:[strContent lengthOfBytesUsingEncoding:NSUTF8StringEncoding]];
+    }
     
     if (self.logDataCache.length >= IHFLogDataCacheMaxSize) {
         [self recycleAsyncFlushLogCache];
@@ -104,6 +106,15 @@
             [aLogFileHandler synchronizeFile];
         });
     }
+}
+
+
+#pragma mark - is permitted to write out
+
+- (BOOL)isPermitted:(HFLogContent *)logContent
+{
+    return is_HFLogLevel_valid(logContent.level)
+           && logContent.level > HFLogLevel_DEBUG;
 }
 
 
