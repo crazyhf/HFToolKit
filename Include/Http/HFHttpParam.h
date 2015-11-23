@@ -13,6 +13,8 @@
 HF_ENUM_HEAD(NSUInteger, HFPOSTMimeType)
     HFPOSTMime_UnknownType,
 
+    HFPOSTMime_ZipArchive,
+
     HFPOSTMime_TextPlain,
     HFPOSTMime_TextHtml,
     HFPOSTMime_TextXml,

@@ -60,13 +60,35 @@
 {
     [super viewDidAppear:animated];
     
-//    [[HFHttpQueue sharedInstance] addRequest:^(HFHttpRequest * httpRequest) {
-//        [httpRequest httpGET:@"http://localhost:8080/travel_2.jpg" param:nil];
-//    } finished:^(NSInteger respCode, NSData *respData, NSError *respErr) {
-//        UIImageView * aImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-//        aImageView.image = [UIImage imageWithData:respData];
-//        [self.view addSubview:aImageView];
-//    }];
+    [[HFHttpQueue sharedInstance] addRequest:^(HFHttpRequest * httpRequest) {
+        HFHttpParam * httpParam = [[HFHttpParam alloc] init];
+//        [httpParam addParamKey:@"test" paramValue:@"test_value"];
+        
+        [httpRequest httpGET:@"http://localhost:8080/travel_1.jpg" param:httpParam];
+    } finished:^(NSInteger respCode, NSData *respData, NSError *respErr) {
+        NSLog(@"respCode[%@] respDataLen[%@] respErr[%@]", @(respCode), @(respData.length), respErr);
+        if (0 != respData.length) {
+            UIImageView * aImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+            aImageView.image = [UIImage imageWithData:respData];
+            [self.view addSubview:aImageView];
+        }
+    }];
+    
+    [[HFHttpQueue sharedInstance] addRequest:^(HFHttpRequest *httpRequest) {
+        HFPOSTFileParam * fileParam = [[HFPOSTFileParam alloc] init];
+        fileParam.paramKey = @"post_file";
+        fileParam.mimeType = HFPOSTMime_TextPlain;
+        fileParam.fileName = @"post_file.txt";
+        fileParam.filePath = [[NSBundle mainBundle] pathForResource:@"post_file" ofType:@"txt"];
+        
+        HFHttpParam * httpParam = [[HFHttpParam alloc] init];
+        [httpParam addFileParam:fileParam];
+        [httpParam addParamKey:@"test" paramValue:@"test_value"];
+        
+        [httpRequest httpPOST:@"http://localhost:8080" param:httpParam];
+    } finished:^(NSInteger respCode, NSData *respData, NSError *respErr) {
+        NSLog(@"respCode[%@] respData[%@] respErr[%@]", @(respCode), [[NSString alloc] initWithData:respData encoding:NSUTF8StringEncoding], respErr);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

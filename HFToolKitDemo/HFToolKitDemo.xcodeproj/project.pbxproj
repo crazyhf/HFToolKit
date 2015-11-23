@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D20BD9A71C02F9810068F5D7 /* post_file.txt in Resources */ = {isa = PBXBuildFile; fileRef = D20BD9A61C02F9810068F5D7 /* post_file.txt */; settings = {ASSET_TAGS = (); }; };
 		D29BDB161B6671D7006F18B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D29BDB151B6671D7006F18B8 /* main.m */; };
 		D29BDB191B6671D7006F18B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D29BDB181B6671D7006F18B8 /* AppDelegate.m */; };
 		D29BDB1C1B6671D7006F18B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D29BDB1B1B6671D7006F18B8 /* ViewController.m */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D20BD9A61C02F9810068F5D7 /* post_file.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = post_file.txt; sourceTree = "<group>"; };
 		D29BDB101B6671D7006F18B8 /* HFToolKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HFToolKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29BDB141B6671D7006F18B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D29BDB151B6671D7006F18B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				D29BDB1D1B6671D7006F18B8 /* Main.storyboard */,
 				D29BDB201B6671D8006F18B8 /* Images.xcassets */,
 				D29BDB221B6671D8006F18B8 /* LaunchScreen.xib */,
+				D20BD9A61C02F9810068F5D7 /* post_file.txt */,
 				D29BDB131B6671D7006F18B8 /* Supporting Files */,
 			);
 			path = HFToolKitDemo;
@@ -273,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D20BD9A71C02F9810068F5D7 /* post_file.txt in Resources */,
 				D29BDB1F1B6671D7006F18B8 /* Main.storyboard in Resources */,
 				D29BDB241B6671D8006F18B8 /* LaunchScreen.xib in Resources */,
 				D29BDB211B6671D8006F18B8 /* Images.xcassets in Resources */,

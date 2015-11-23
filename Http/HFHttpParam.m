@@ -22,6 +22,17 @@
     return [NSString stringWithFormat:@"%u %@ : %@[%@]", self.mimeType, self.paramKey, self.fileName, self.filePath];
 }
 
+- (id)init
+{
+    if (self = [super init]) {
+        self.paramKey = @"";
+        self.filePath = @"";
+        self.fileName = @"";
+        self.mimeType = HFPOSTMime_UnknownType;
+    }
+    return self;
+}
+
 @end
 
 

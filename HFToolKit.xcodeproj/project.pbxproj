@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D20BD9A41C02BBB50068F5D7 /* HFCompressHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D20BD9A31C02BBB50068F5D7 /* HFCompressHelper.m */; settings = {ASSET_TAGS = (); }; };
 		D2142C5A1BE363FE00F8B8BF /* HFDigestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2142C591BE363FE00F8B8BF /* HFDigestHelper.m */; settings = {ASSET_TAGS = (); }; };
 		D21D3DD31BEB004800202FA9 /* HFHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D21D3DD21BEB004800202FA9 /* HFHttpRequest.m */; settings = {ASSET_TAGS = (); }; };
 		D239D1021BE1FE3C0081A973 /* HFFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D239D1011BE1FE3C0081A973 /* HFFileUtil.m */; settings = {ASSET_TAGS = (); }; };
@@ -52,6 +53,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D20BD9A31C02BBB50068F5D7 /* HFCompressHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFCompressHelper.m; sourceTree = "<group>"; };
+		D20BD9A51C02BBD40068F5D7 /* HFCompressHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFCompressHelper.h; sourceTree = "<group>"; };
 		D2142C591BE363FE00F8B8BF /* HFDigestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFDigestHelper.m; sourceTree = "<group>"; };
 		D2142C5B1BE3642000F8B8BF /* HFDigestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFDigestHelper.h; sourceTree = "<group>"; };
 		D21D3DCF1BEB002F00202FA9 /* HFHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpRequest.h; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 				D239D1111BE209DD0081A973 /* HFDeviceUtil.h */,
 				D239D1121BE209DD0081A973 /* HFSystemUtil.h */,
 				D292EFAC1BFEF70600D79BF4 /* HFRandomUtil.h */,
+				D20BD9A51C02BBD40068F5D7 /* HFCompressHelper.h */,
 			);
 			path = Wanderers;
 			sourceTree = "<group>";
@@ -288,6 +292,7 @@
 				D2DE60DE1BCBAC87003A61EB /* HFDeviceUtil.m */,
 				D2DE60E11BCBACA1003A61EB /* HFSystemUtil.m */,
 				D292EFAA1BFEF6DE00D79BF4 /* HFRandomUtil.m */,
+				D20BD9A31C02BBB50068F5D7 /* HFCompressHelper.m */,
 			);
 			path = Wanderers;
 			sourceTree = "<group>";
@@ -427,6 +432,7 @@
 				D2DE60E51BCBACBE003A61EB /* HFAppHelper.m in Sources */,
 				D21D3DD31BEB004800202FA9 /* HFHttpRequest.m in Sources */,
 				D2DE60E21BCBACA1003A61EB /* HFSystemUtil.m in Sources */,
+				D20BD9A41C02BBB50068F5D7 /* HFCompressHelper.m in Sources */,
 				D2F815081BE7722800CF500B /* HFTaskBase.m in Sources */,
 				D2CB08F21BC8FCD800B7A761 /* HFLogUtil.m in Sources */,
 				D239D1021BE1FE3C0081A973 /* HFFileUtil.m in Sources */,
