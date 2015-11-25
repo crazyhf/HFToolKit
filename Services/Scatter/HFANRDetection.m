@@ -61,9 +61,8 @@
 
 - (void)scheduleDetection
 {
-    HFWeakSelf();
     dispatch_async(_detectionQueue, ^{
-        NSTimer * scheduleTimer = [NSTimer timerWithTimeInterval:IHFANRDetectionInterval target:hfWeakSelf selector:@selector(realANRDetection) userInfo:nil repeats:YES];
+        NSTimer * scheduleTimer = [NSTimer timerWithTimeInterval:IHFANRDetectionInterval target:self selector:@selector(realANRDetection) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:scheduleTimer forMode:NSDefaultRunLoopMode];
         [[NSRunLoop currentRunLoop] run];
     });
