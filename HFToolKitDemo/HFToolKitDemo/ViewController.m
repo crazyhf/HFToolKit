@@ -14,6 +14,7 @@
 #import "HFDigestHelper.h"
 #import "HFTaskQueue.h"
 #import "HFHttpQueue.h"
+#import "HFANRDetection.h"
 
 @interface ViewController ()
 
@@ -65,6 +66,8 @@
 //        [httpParam addParamKey:@"test" paramValue:@"test_value"];
         
         [httpRequest httpGET:@"http://localhost:8080/travel_1.jpg" param:httpParam];
+        
+        [[HFANRDetection sharedInstance] enableDetection];
     } finished:^(NSInteger respCode, NSData *respData, NSError *respErr) {
         NSLog(@"respCode[%@] respDataLen[%@] respErr[%@]", @(respCode), @(respData.length), respErr);
         if (0 != respData.length) {
@@ -72,6 +75,8 @@
             aImageView.image = [UIImage imageWithData:respData];
             [self.view addSubview:aImageView];
         }
+        [[HFANRDetection sharedInstance] enableDetection];
+        [[HFANRDetection sharedInstance] enableDetection];
     }];
     
     [[HFHttpQueue sharedInstance] addRequest:^(HFHttpRequest *httpRequest) {
@@ -89,6 +94,36 @@
     } finished:^(NSInteger respCode, NSData *respData, NSError *respErr) {
         NSLog(@"respCode[%@] respData[%@] respErr[%@]", @(respCode), [[NSString alloc] initWithData:respData encoding:NSUTF8StringEncoding], respErr);
     }];
+    
+    [[HFANRDetection sharedInstance] setANRNotifyBlock:^{
+        NSLog(@"ui thread is blocked");
+        [self testThreadBlock1];
+    } dispatchQueue:dispatch_get_global_queue(0, DISPATCH_QUEUE_PRIORITY_DEFAULT)];
+    
+    [self testUIThreadBlock0];
+}
+
+- (void)testUIThreadBlock0
+{
+    for (NSUInteger index = 0; index < INT16_MAX * 2; index++) {
+        NSUInteger result = 0;
+        for (NSUInteger base = 0; base <= index; base++) {
+            result += base;
+        }
+    }
+    
+    [self performSelector:_cmd withObject:nil afterDelay:10];
+}
+
+- (void)testThreadBlock1
+{
+    for (NSUInteger index = 0; index < INT16_MAX * 2; index++) {
+        NSUInteger result = 0;
+        for (NSUInteger base = 0; base <= index; base++) {
+            result += base;
+        }
+    }
+    NSLog(@"testThreadBlock1 finished");
 }
 
 - (void)didReceiveMemoryWarning {

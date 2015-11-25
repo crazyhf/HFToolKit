@@ -15,6 +15,27 @@
 
 #define ReverseDNSIdentify(_identify_) "com.crazylhf.hftoolkit."#_identify_
 
+#define ReverseDNSOCIdentify(_identify_) @"com.crazylhf.hftoolkit."@#_identify_
+
+#define ExternReverseDNSString(_string_name_) extern NSString * const _string_name_
+#define DefineReverseDNSString(_string_name_) \
+            NSString * const _string_name_ = ReverseDNSOCIdentify(_string_name_)
+
+
+///=================================================================
+
+#pragma mark - notification macro
+
+#define ExternNotificationName(_notify_name_, .../*description*/) \
+            ExternReverseDNSString(_notify_name_)
+#define DefineNotificationName(_notify_name_) \
+            DefineReverseDNSString(_notify_name_)
+
+#define ExternNotificationKey(_notify_key_, .../*description*/) \
+            ExternReverseDNSString(_notify_key_)
+#define DefineNotificationKey(_notify_key_) \
+            DefineReverseDNSString(_notify_key_)
+
 
 ///=================================================================
 
@@ -27,10 +48,13 @@
 #define HF_ENUM_TAIL(_enum_name_) \
                 _enum_name_##_UPPERBOUND, /*enum上界值*/ \
             }; \
+            _Pragma("clang diagnostic push")\
+            _Pragma("clang diagnostic ignored \"-Wunused-function\"")\
             static inline BOOL is_##_enum_name_##_valid(_enum_name_ _value_) {\
                 return ((_value_ > _enum_name_##_LOWERBOUND) \
                         && (_value_ < _enum_name_##_UPPERBOUND)); \
-            }
+            } \
+            _Pragma("clang diagnostic pop")
 
 
 ///=================================================================
