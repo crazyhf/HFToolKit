@@ -82,7 +82,7 @@
     [self sendDetectRecord];
     
     if (aRecordList.count >= IHFANRDetectionBlockCount) {
-        HFInnerLogi(@"unprocessed ANR detection records : %u", aRecordList.count);
+        HFInnerLogi(@"unprocessed ANR detection records : %lu", (unsigned long)aRecordList.count);
         
         [self regressDetectRecord];
         
@@ -159,6 +159,11 @@
         _notifyDispatchQueue = nil;
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
 

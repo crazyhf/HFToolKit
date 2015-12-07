@@ -19,7 +19,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%u %@ : %@[%@]", self.mimeType, self.paramKey, self.fileName, self.filePath];
+    return [NSString stringWithFormat:@"%lu %@ : %@[%@]", (unsigned long)self.mimeType, self.paramKey, self.fileName, self.filePath];
 }
 
 - (id)init

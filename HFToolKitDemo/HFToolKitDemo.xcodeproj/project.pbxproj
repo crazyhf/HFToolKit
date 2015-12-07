@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D20BD9A71C02F9810068F5D7 /* post_file.txt in Resources */ = {isa = PBXBuildFile; fileRef = D20BD9A61C02F9810068F5D7 /* post_file.txt */; settings = {ASSET_TAGS = (); }; };
+		D20BD9A71C02F9810068F5D7 /* post_file.txt in Resources */ = {isa = PBXBuildFile; fileRef = D20BD9A61C02F9810068F5D7 /* post_file.txt */; };
 		D29BDB161B6671D7006F18B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D29BDB151B6671D7006F18B8 /* main.m */; };
 		D29BDB191B6671D7006F18B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D29BDB181B6671D7006F18B8 /* AppDelegate.m */; };
 		D29BDB1C1B6671D7006F18B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D29BDB1B1B6671D7006F18B8 /* ViewController.m */; };
@@ -16,7 +16,7 @@
 		D29BDB241B6671D8006F18B8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29BDB221B6671D8006F18B8 /* LaunchScreen.xib */; };
 		D29BDB301B6671D8006F18B8 /* HFToolKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D29BDB2F1B6671D8006F18B8 /* HFToolKitDemoTests.m */; };
 		D29BDB441B6672C7006F18B8 /* libHFToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29BDB411B66727E006F18B8 /* libHFToolKit.a */; };
-		D2DE60EA1BCBB216003A61EB /* NSDate+DisplayString.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60E91BCBB216003A61EB /* NSDate+DisplayString.m */; settings = {ASSET_TAGS = (); }; };
+		D2DE60EA1BCBB216003A61EB /* NSDate+DisplayString.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60E91BCBB216003A61EB /* NSDate+DisplayString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -389,7 +389,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-lz";
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"CoreTelephony\"",
+				);
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -433,7 +439,13 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "-lz";
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"CoreTelephony\"",
+				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

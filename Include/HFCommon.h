@@ -36,6 +36,8 @@
 #define DefineNotificationKey(_notify_key_) \
             DefineReverseDNSString(_notify_key_)
 
+#define HF_NotifyCenter   [NSNotificationCenter defaultCenter]
+
 
 ///=================================================================
 
