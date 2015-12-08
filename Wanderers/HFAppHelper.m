@@ -68,9 +68,9 @@
     return isTraced;
 }
 
-+ (BOOL)isDebugingOrSuspension
++ (BOOL)isDebugingOrSuspension:(uint32_t)processID
 {
-    int mib[4] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, [HFSystemUtil processID] };
+    int mib[4] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, processID };
     
     BOOL isDebuging = NO;
     

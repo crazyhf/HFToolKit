@@ -19,4 +19,7 @@
  */
 + (BOOL)isAppBeingTraced;
 
+/// check process[processID] is debuging or suspension
++ (BOOL)isDebugingOrSuspension:(uint32_t)processID;
+
 @end

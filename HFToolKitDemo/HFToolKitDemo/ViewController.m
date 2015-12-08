@@ -14,6 +14,7 @@
 #import "HFHttpQueue.h"
 
 #import "HFAppHelper.h"
+#import "HFSystemUtil.h"
 #import "HFDeviceUtil.h"
 #import "HFDigestHelper.h"
 #import "HFDirectoryUtil.h"
@@ -64,7 +65,8 @@
     
     [[HFNetworkMonitor sharedInstance] enableMonitor];
     
-    HFLogi(@"XXX", @"[HFAppHelper isAppBeingTraced] : %@", @([HFAppHelper isAppBeingTraced]));
+    HFLogi(@"XXX", @"[HFAppHelper isAppBeingTraced] : %d", [HFAppHelper isAppBeingTraced]);
+    HFLogi(@"XXX", @"[HFAppHelper isDebugingOrSuspension:%u] : %d", [HFSystemUtil processID], [HFAppHelper isDebugingOrSuspension:[HFSystemUtil processID]]);
 }
 
 - (void)viewDidAppear:(BOOL)animated
