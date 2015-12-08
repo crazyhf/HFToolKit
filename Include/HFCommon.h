@@ -26,11 +26,13 @@
 
 #pragma mark - notification macro
 
+/// eg. ExternNotificationName(NotifyName, brief("nofity description"))
 #define ExternNotificationName(_notify_name_, .../*description*/) \
             ExternReverseDNSString(_notify_name_)
 #define DefineNotificationName(_notify_name_) \
             DefineReverseDNSString(_notify_name_)
 
+/// eg. ExternNotificationKey(NotifyKey, brief("nofity key description"))
 #define ExternNotificationKey(_notify_key_, .../*description*/) \
             ExternReverseDNSString(_notify_key_)
 #define DefineNotificationKey(_notify_key_) \
