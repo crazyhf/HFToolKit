@@ -9,6 +9,7 @@
 #import "HFANRDetection.h"
 
 #import "HFInnerLog.h"
+#import "HFAppHelper.h"
 
 #define IHFANRDetectionInterval      (2)
 #define IHFANRDetectionBlockCount    (2)
@@ -86,8 +87,10 @@
         
         [self regressDetectRecord];
         
-        if (nil != _anrNotifyBlock && nil != _notifyDispatchQueue)
-        {
+        if (YES == [HFAppHelper isAppBeingTraced]) {
+            HFInnerLogi(@"the app is being traced, don't need to notify the anr");
+        }
+        else if (nil != _anrNotifyBlock && nil != _notifyDispatchQueue) {
             anr_notify_block_t aNotifyBlock = _anrNotifyBlock;
             dispatch_async(_notifyDispatchQueue, ^{
                 aNotifyBlock();

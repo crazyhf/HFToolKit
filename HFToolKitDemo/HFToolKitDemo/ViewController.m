@@ -9,12 +9,18 @@
 #import "ViewController.h"
 
 #import "HFLogUtil.h"
-#import "HFDeviceUtil.h"
-#import "HFDirectoryUtil.h"
-#import "HFDigestHelper.h"
+
 #import "HFTaskQueue.h"
 #import "HFHttpQueue.h"
+
+#import "HFAppHelper.h"
+#import "HFDeviceUtil.h"
+#import "HFDigestHelper.h"
+#import "HFDirectoryUtil.h"
+
 #import "HFANRDetection.h"
+#import "HFNetworkMonitor.h"
+
 
 @interface ViewController ()
 
@@ -55,6 +61,10 @@
     self.serialQueue = [[HFTaskQueue alloc] initWithQueueType:HFTaskQueue_Serial finishedDispatch:dispatch_get_main_queue()];
     
     self.concurrentQueue = [[HFTaskQueue alloc] initWithQueueType:HFTaskQueue_Concurrent finishedDispatch:dispatch_get_main_queue()];
+    
+    [[HFNetworkMonitor sharedInstance] enableMonitor];
+    
+    HFLogi(@"XXX", @"[HFAppHelper isAppBeingTraced] : %@", @([HFAppHelper isAppBeingTraced]));
 }
 
 - (void)viewDidAppear:(BOOL)animated
