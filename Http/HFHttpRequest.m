@@ -181,7 +181,7 @@
             
             NSData * postFileData = nil;
             if (filePathList.count > 1) {
-                postFileData = [HFCompressHelper zipCompress:filePathList];
+                postFileData = [HFCompressHelper gzipCompress:filePathList];
                 postFileName = [NSString stringWithFormat:@"%lx.zip", (unsigned long)([NSDate date].timeIntervalSince1970 * 1000)];
                 postMime = HFPOSTMime_ZipArchive;
             } else {
