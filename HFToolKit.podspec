@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'HFToolKit'
-  s.version      = '0.0.4'
+  s.version      = '0.0.5'
   s.summary      = 'IOS Tool Kit —— It is just for fun!'
   s.homepage     = 'https://github.com/crazyhf/HFToolKit'
   s.license      = {
@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.source_files = 'Include/**/*.h', 'Compress/**/*.{h,m}', 'File/**/*.{h,m}', 'Http/**/*.{h,m}', 'Log/**/*.{h,m}', 'Security/**/*.{h,m}', 'Services/**/*.{h,m}', 'TaskQueue/**/*.{h,m}', 'Wanderers/**/*.{h,m}'
   s.source       = { :git => 'https://github.com/crazyhf/HFToolKit.git', :tag => 'v#{spec.version}' }
 
-  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lz -framework "SystemConfiguration" -framework "CoreTelephony"' }
+  s.xcconfig = { 'OTHER_LDFLAGS' => '-lz -framework"SystemConfiguration" -framework"CoreTelephony"' }
 end
