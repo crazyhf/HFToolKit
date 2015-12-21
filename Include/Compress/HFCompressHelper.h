@@ -15,6 +15,8 @@
 
 #pragma mark - inflate/deflate by means of zlib
 
++ (BOOL)isZlibFile:(NSData *)sourceData;
+
 + (NSData *)zlibInflate:(NSData *)sourceData;
 
 + (NSData *)zlibDeflate:(NSData *)sourceData gzipHeader:(BOOL)gzipHeader;

@@ -49,6 +49,7 @@
  *       for CM not equal to 8.
  *
  *       zlib data format : FLG is 0x01 or 0x5E or 0x9C or 0xDA (when FDICT is 0)
+ *                          FLG is 0x20 or 0x7D or 0xBB or 0xF9 (when FDICT is 1)
  *       FLG (FLaGs)
  *       This flag byte is divided as follows:
  *       bits 0 to 4  FCHECK  (check bits for CMF and FLG)
@@ -82,6 +83,13 @@
  *       (FLEVEL = 2)0x78 ***** 001 = 30720 + 128 = 30848  -> 31 * 996 = 30876 -> 0x789C
  *       (FLEVEL = 3)0x78 ***** 011 = 30720 + 192 = 30912  -> 31 * 998 = 30938 -> 0x78DA
  *
+ *       the zlib data header is follows:(when FDICT is 1)
+ *
+ *       (FLEVEL = 0)0x78 ***** 100 = 30720 + 32  = 30752  -> 31 * 992 = 30752 -> 0x7820
+ *       (FLEVEL = 1)0x78 ***** 110 = 30720 + 96  = 30816  -> 31 * 995 = 30845 -> 0x787D
+ *       (FLEVEL = 2)0x78 ***** 101 = 30720 + 160 = 30880  -> 31 * 997 = 30907 -> 0x78BB
+ *       (FLEVEL = 3)0x78 ***** 111 = 30720 + 224 = 30944  -> 31 * 999 = 30969 -> 0x78F9
+ *
  *  @see https://www.ietf.org/rfc/rfc1951.txt
  *       compressed data "DEFLATE Compressed Data Format Specification"
  */
@@ -94,6 +102,27 @@
 
 
 #pragma mark - inflate/deflate by means of zlib
+
+/**
+ *  zlib data format : CMF is 0x78
+ *                     FLG is 0x01 or 0x5E or 0x9C or 0xDA (when FDICT is 0)
+ *                     FLG is 0x20 or 0x7D or 0xBB or 0xF9 (when FDICT is 1)
+ */
++ (BOOL)isZlibFile:(NSData *)sourceData
+{
+    unsigned char * sourceBytes = (unsigned char *)sourceData.bytes;
+    
+    unsigned char zlibByte0 = sourceBytes[0], zlibByte1 = sourceBytes[1];
+    if (0x78 == zlibByte0
+        && (0x01 == zlibByte1 || 0x5E == zlibByte1
+            || 0x9C == zlibByte1 || 0xDA == zlibByte1
+            || 0x20 == zlibByte1 || 0x7D == zlibByte1
+            || 0xBB == zlibByte1 || 0xF9 == zlibByte1)) {
+        return YES;
+    }
+    
+    return NO;
+}
 
 + (NSData *)zlibInflate:(NSData *)sourceData
 {
@@ -169,6 +198,36 @@
     }
     
     return [NSData data];
+}
+
+
+#pragma mark - private
+
+/**
+ *  FDICT (Preset dictionary) If FDICT is set, a DICT dictionary identifier is present
+ *  immediately after the FLG byte. The dictionary is a sequence of bytes which are
+ *  initially fed to the compressor without producing any compressed output. DICT is
+ *  the Adler-32 checksum of this sequence of bytes (see the definition of ADLER32
+ *  below).  The decompressor can use this identifier to determine which dictionary
+ *  has been used by the compressor.
+ *
+ *  the zlib data header is follows:(when FDICT is 1)
+ *
+ *  (FLEVEL = 0)0x78 ***** 100 = 30720 + 32  = 30752  -> 31 * 992 = 30752 -> 0x7820
+ *  (FLEVEL = 1)0x78 ***** 110 = 30720 + 96  = 30816  -> 31 * 995 = 30845 -> 0x787D
+ *  (FLEVEL = 2)0x78 ***** 101 = 30720 + 160 = 30880  -> 31 * 997 = 30907 -> 0x78BB
+ *  (FLEVEL = 3)0x78 ***** 111 = 30720 + 224 = 30944  -> 31 * 999 = 30969 -> 0x78F9
+ */
++ (BOOL)isDICTIDFieldEnabled:(NSData *)sourceData
+{
+    if (YES == [self isZlibFile:sourceData]) {
+        unsigned char zlibByte1 = ((unsigned char *)sourceData.bytes)[1];
+        if (0x20 == zlibByte1 || 0x7D == zlibByte1
+            || 0xBB == zlibByte1 || 0xF9 == zlibByte1) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 @end
