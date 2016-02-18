@@ -92,6 +92,7 @@
  *
  *  @see https://www.ietf.org/rfc/rfc1951.txt
  *       compressed data "DEFLATE Compressed Data Format Specification"
+ *  @see https://en.wikipedia.org/wiki/DEFLATE
  */
 @implementation HFCompressHelper
 

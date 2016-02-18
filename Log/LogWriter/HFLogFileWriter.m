@@ -74,14 +74,16 @@
     
     fprintf(stdout, "%s", strContent.UTF8String);
     
-    if (YES == [self isPermitted:logContent]) {
-        [self.logDataCache appendBytes:strContent.UTF8String
-                                length:[strContent lengthOfBytesUsingEncoding:NSUTF8StringEncoding]];
-    }
-    
-    if (self.logDataCache.length >= IHFLogDataCacheMaxSize) {
-        [self recycleAsyncFlushLogCache];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (YES == [self isPermitted:logContent]) {
+            [self.logDataCache appendBytes:strContent.UTF8String
+                                    length:[strContent lengthOfBytesUsingEncoding:NSUTF8StringEncoding]];
+        }
+        
+        if (self.logDataCache.length >= IHFLogDataCacheMaxSize) {
+            [self recycleAsyncFlushLogCache];
+        }
+    });
 }
 
 - (void)recycleAsyncFlushLogCache

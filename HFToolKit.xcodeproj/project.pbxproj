@@ -7,29 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D2142C5A1BE363FE00F8B8BF /* HFDigestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2142C591BE363FE00F8B8BF /* HFDigestHelper.m */; settings = {ASSET_TAGS = (); }; };
-		D21D3DD31BEB004800202FA9 /* HFHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D21D3DD21BEB004800202FA9 /* HFHttpRequest.m */; settings = {ASSET_TAGS = (); }; };
-		D239D1021BE1FE3C0081A973 /* HFFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D239D1011BE1FE3C0081A973 /* HFFileUtil.m */; settings = {ASSET_TAGS = (); }; };
-		D239D10B1BE2008A0081A973 /* HFDirectoryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D239D10A1BE2008A0081A973 /* HFDirectoryUtil.m */; settings = {ASSET_TAGS = (); }; };
-		D23DB1DC1C046D9C00101E04 /* HFCompressHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DB1DB1C046D9C00101E04 /* HFCompressHelper.m */; settings = {ASSET_TAGS = (); }; };
-		D23DB1EC1C0471B300101E04 /* HFANRDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DB1E91C0471B300101E04 /* HFANRDetection.m */; settings = {ASSET_TAGS = (); }; };
-		D23DB1ED1C0471B300101E04 /* HFNetworkMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DB1EA1C0471B300101E04 /* HFNetworkMonitor.m */; settings = {ASSET_TAGS = (); }; };
-		D2534E331BF1F3580001A9F6 /* HFEncodeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2534E321BF1F3580001A9F6 /* HFEncodeHelper.m */; settings = {ASSET_TAGS = (); }; };
-		D287571D1BECA82100FB728F /* HFHttpParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D287571C1BECA82100FB728F /* HFHttpParam.m */; settings = {ASSET_TAGS = (); }; };
-		D292EFAB1BFEF6DE00D79BF4 /* HFRandomUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D292EFAA1BFEF6DE00D79BF4 /* HFRandomUtil.m */; settings = {ASSET_TAGS = (); }; };
+		D2142C5A1BE363FE00F8B8BF /* HFDigestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2142C591BE363FE00F8B8BF /* HFDigestHelper.m */; };
+		D21D3DD31BEB004800202FA9 /* HFHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D21D3DD21BEB004800202FA9 /* HFHttpRequest.m */; };
+		D239D1021BE1FE3C0081A973 /* HFFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D239D1011BE1FE3C0081A973 /* HFFileUtil.m */; };
+		D239D10B1BE2008A0081A973 /* HFDirectoryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D239D10A1BE2008A0081A973 /* HFDirectoryUtil.m */; };
+		D23DB1DC1C046D9C00101E04 /* HFCompressHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DB1DB1C046D9C00101E04 /* HFCompressHelper.m */; };
+		D23DB1EC1C0471B300101E04 /* HFANRDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DB1E91C0471B300101E04 /* HFANRDetection.m */; };
+		D23DB1ED1C0471B300101E04 /* HFNetworkMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DB1EA1C0471B300101E04 /* HFNetworkMonitor.m */; };
+		D2534E331BF1F3580001A9F6 /* HFEncodeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2534E321BF1F3580001A9F6 /* HFEncodeHelper.m */; };
+		D287571D1BECA82100FB728F /* HFHttpParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D287571C1BECA82100FB728F /* HFHttpParam.m */; };
+		D292EFAB1BFEF6DE00D79BF4 /* HFRandomUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D292EFAA1BFEF6DE00D79BF4 /* HFRandomUtil.m */; };
+		D29903661C7598640050B0B9 /* HFANRMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = D29903651C7598640050B0B9 /* HFANRMonitor.m */; };
 		D29BDAEE1B666C6E006F18B8 /* HFToolKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D29BDAED1B666C6E006F18B8 /* HFToolKit.m */; };
 		D29BDAF41B666C6E006F18B8 /* libHFToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D29BDAE81B666C6E006F18B8 /* libHFToolKit.a */; };
-		D2CB08F21BC8FCD800B7A761 /* HFLogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CB08F11BC8FCD800B7A761 /* HFLogUtil.m */; settings = {ASSET_TAGS = (); }; };
-		D2CB08F71BC9050600B7A761 /* HFLogTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CB08F61BC9050600B7A761 /* HFLogTypes.m */; settings = {ASSET_TAGS = (); }; };
-		D2CB08FE1BC909C300B7A761 /* HFLogStdOutWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CB08FD1BC909C300B7A761 /* HFLogStdOutWriter.m */; settings = {ASSET_TAGS = (); }; };
-		D2CB09011BC909D300B7A761 /* HFLogFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CB09001BC909D300B7A761 /* HFLogFileWriter.m */; settings = {ASSET_TAGS = (); }; };
-		D2DE60DB1BCBA0E6003A61EB /* NSDate+DisplayString.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60DA1BCBA0E6003A61EB /* NSDate+DisplayString.m */; settings = {ASSET_TAGS = (); }; };
-		D2DE60DF1BCBAC87003A61EB /* HFDeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60DE1BCBAC87003A61EB /* HFDeviceUtil.m */; settings = {ASSET_TAGS = (); }; };
-		D2DE60E21BCBACA1003A61EB /* HFSystemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60E11BCBACA1003A61EB /* HFSystemUtil.m */; settings = {ASSET_TAGS = (); }; };
-		D2DE60E51BCBACBE003A61EB /* HFAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60E41BCBACBE003A61EB /* HFAppHelper.m */; settings = {ASSET_TAGS = (); }; };
-		D2F815081BE7722800CF500B /* HFTaskBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F815071BE7722800CF500B /* HFTaskBase.m */; settings = {ASSET_TAGS = (); }; };
-		D2F8150B1BE7723400CF500B /* HFTaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F8150A1BE7723400CF500B /* HFTaskQueue.m */; settings = {ASSET_TAGS = (); }; };
-		D2F815181BE7730E00CF500B /* HFHttpQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F815161BE7730E00CF500B /* HFHttpQueue.m */; settings = {ASSET_TAGS = (); }; };
+		D2CB08F21BC8FCD800B7A761 /* HFLogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CB08F11BC8FCD800B7A761 /* HFLogUtil.m */; };
+		D2CB08F71BC9050600B7A761 /* HFLogTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CB08F61BC9050600B7A761 /* HFLogTypes.m */; };
+		D2CB08FE1BC909C300B7A761 /* HFLogStdOutWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CB08FD1BC909C300B7A761 /* HFLogStdOutWriter.m */; };
+		D2CB09011BC909D300B7A761 /* HFLogFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CB09001BC909D300B7A761 /* HFLogFileWriter.m */; };
+		D2DE60DB1BCBA0E6003A61EB /* NSDate+DisplayString.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60DA1BCBA0E6003A61EB /* NSDate+DisplayString.m */; };
+		D2DE60DF1BCBAC87003A61EB /* HFDeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60DE1BCBAC87003A61EB /* HFDeviceUtil.m */; };
+		D2DE60E21BCBACA1003A61EB /* HFSystemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60E11BCBACA1003A61EB /* HFSystemUtil.m */; };
+		D2DE60E51BCBACBE003A61EB /* HFAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE60E41BCBACBE003A61EB /* HFAppHelper.m */; };
+		D2F815081BE7722800CF500B /* HFTaskBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F815071BE7722800CF500B /* HFTaskBase.m */; };
+		D2F8150B1BE7723400CF500B /* HFTaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F8150A1BE7723400CF500B /* HFTaskQueue.m */; };
+		D2F815181BE7730E00CF500B /* HFHttpQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F815161BE7730E00CF500B /* HFHttpQueue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		D287571C1BECA82100FB728F /* HFHttpParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpParam.m; sourceTree = "<group>"; };
 		D292EFAA1BFEF6DE00D79BF4 /* HFRandomUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFRandomUtil.m; sourceTree = "<group>"; };
 		D292EFAC1BFEF70600D79BF4 /* HFRandomUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFRandomUtil.h; sourceTree = "<group>"; };
+		D29903651C7598640050B0B9 /* HFANRMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFANRMonitor.m; sourceTree = "<group>"; };
+		D29903671C7598AB0050B0B9 /* HFANRMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFANRMonitor.h; sourceTree = "<group>"; };
 		D29BDAE81B666C6E006F18B8 /* libHFToolKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHFToolKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29BDAED1B666C6E006F18B8 /* HFToolKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HFToolKit.m; sourceTree = "<group>"; };
 		D29BDAF31B666C6E006F18B8 /* HFToolKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HFToolKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +196,7 @@
 		D23DB1E21C04717500101E04 /* Scatter */ = {
 			isa = PBXGroup;
 			children = (
+				D29903671C7598AB0050B0B9 /* HFANRMonitor.h */,
 				D23DB1E31C04717500101E04 /* HFANRDetection.h */,
 				D23DB1E41C04717500101E04 /* HFNetworkMonitor.h */,
 			);
@@ -226,6 +230,7 @@
 		D23DB1E81C0471B300101E04 /* Scatter */ = {
 			isa = PBXGroup;
 			children = (
+				D29903651C7598640050B0B9 /* HFANRMonitor.m */,
 				D23DB1E91C0471B300101E04 /* HFANRDetection.m */,
 				D23DB1EA1C0471B300101E04 /* HFNetworkMonitor.m */,
 			);
@@ -527,6 +532,7 @@
 				D23DB1EC1C0471B300101E04 /* HFANRDetection.m in Sources */,
 				D239D1021BE1FE3C0081A973 /* HFFileUtil.m in Sources */,
 				D23DB1DC1C046D9C00101E04 /* HFCompressHelper.m in Sources */,
+				D29903661C7598640050B0B9 /* HFANRMonitor.m in Sources */,
 				D29BDAEE1B666C6E006F18B8 /* HFToolKit.m in Sources */,
 				D2CB08FE1BC909C300B7A761 /* HFLogStdOutWriter.m in Sources */,
 				D239D10B1BE2008A0081A973 /* HFDirectoryUtil.m in Sources */,
