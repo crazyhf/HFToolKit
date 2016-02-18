@@ -24,6 +24,10 @@ typedef void(^anr_notify_handle_t)(NSTimeInterval blockDuration);
 - (void)setANRNotifyHandler:(anr_notify_handle_t)anrNotifyHandler
               dispatchQueue:(dispatch_queue_t)dispatchQueue;
 
+- (void)enableMonitor;
+
+- (void)disableMonitor;
+
 HF_DECLARE_SINGLETON()
 
 @end

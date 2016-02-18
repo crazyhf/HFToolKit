@@ -41,7 +41,7 @@
 
 #pragma mark - anr handle
 
-- (void)addRunLoopANRObserver
+- (void)generateRunLoopANRObserver
 {
     HFWeakSelf();
     _observerHandler = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, kCFRunLoopAllActivities, true, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
@@ -74,20 +74,44 @@
             default: break;
         }
     });
-    
+}
+
+- (void)enableMonitor
+{
     if (NULL != _observerHandler) {
-        CFRunLoopAddObserver(CFRunLoopGetMain(), _observerHandler, kCFRunLoopCommonModes);
+        if (!CFRunLoopContainsObserver(CFRunLoopGetMain(), _observerHandler, kCFRunLoopCommonModes)) {
+            CFRunLoopAddObserver(CFRunLoopGetMain(), _observerHandler, kCFRunLoopCommonModes);
+        }
+    } else {
+        HFInnerLoge(@"enableMonitor failed, because _observerHandler is NULL");
+    }
+}
+
+- (void)disableMonitor
+{
+    if (NULL != _observerHandler) {
+        if (CFRunLoopContainsObserver(CFRunLoopGetMain(), _observerHandler, kCFRunLoopCommonModes)) {
+            CFRunLoopRemoveObserver(CFRunLoopGetMain(), _observerHandler, kCFRunLoopCommonModes);
+        }
+    } else {
+        HFInnerLoge(@"disableMonitor failed, because _observerHandler is NULL");
     }
 }
 
 
 - (void)notifyMainThreadANR:(NSTimeInterval)blockDuration
 {
-    if (nil != self.anrNotifyHandler) {
-        self.anrNotifyHandler(blockDuration);
-    }
+    HFWeakSelf();
+    dispatch_async(self.notifyDispatchQueue, ^{
+        anr_notify_handle_t aNotifyHandler = hfWeakSelf.anrNotifyHandler;
+        if (nil != aNotifyHandler) {
+            aNotifyHandler(blockDuration);
+        }
+    });
+    
     HFInnerLogi(@"main thread was blocked for %lf seconds", blockDuration);
 }
+
 
 #pragma mark - calculate
 
@@ -122,7 +146,7 @@
         _notifyDispatchQueue = dispatch_queue_create(ReverseDNSIdentify(HFANRMonitor_Notify_Queue), DISPATCH_QUEUE_SERIAL);
         
         if (YES == [self calculateSecondsPerTick]) {
-            [self addRunLoopANRObserver];
+            [self generateRunLoopANRObserver];
         }
     }
     return self;
@@ -131,7 +155,10 @@
 - (void)dealloc
 {
     if (NULL != _observerHandler) {
-        CFRunLoopObserverInvalidate(_observerHandler);
+        [self disableMonitor];
+        
+        CFRelease(_observerHandler);
+        _observerHandler = NULL;
     }
 }
 
