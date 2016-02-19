@@ -136,7 +136,7 @@
 - (id)init
 {
     if (self = [super init]) {
-        _anrThreshold    = 0.2;
+        _anrThreshold    = 5.0;
         
         _startTick       = 0;
         _secondsPerTick  = 0;
