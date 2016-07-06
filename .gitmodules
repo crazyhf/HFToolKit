@@ -1,0 +1,3 @@
+[submodule "Wanderers/HFInterceptor"]
+	path = Wanderers/HFInterceptor
+	url = https://github.com/crazyhf/HFInterceptor.git
