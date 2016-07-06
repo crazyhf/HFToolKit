@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		D2142C5A1BE363FE00F8B8BF /* HFDigestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2142C591BE363FE00F8B8BF /* HFDigestHelper.m */; };
 		D21D3DD31BEB004800202FA9 /* HFHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D21D3DD21BEB004800202FA9 /* HFHttpRequest.m */; };
+		D2257ACE1D2D142E009A7CC0 /* HFInterceptHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2257AC91D2D142E009A7CC0 /* HFInterceptHelper.m */; };
+		D2257ACF1D2D142E009A7CC0 /* HFInterceptObj.m in Sources */ = {isa = PBXBuildFile; fileRef = D2257ACB1D2D142E009A7CC0 /* HFInterceptObj.m */; };
+		D2257AD01D2D142E009A7CC0 /* NSObject+Interceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = D2257ACD1D2D142E009A7CC0 /* NSObject+Interceptor.m */; };
 		D239D1021BE1FE3C0081A973 /* HFFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D239D1011BE1FE3C0081A973 /* HFFileUtil.m */; };
 		D239D10B1BE2008A0081A973 /* HFDirectoryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D239D10A1BE2008A0081A973 /* HFDirectoryUtil.m */; };
 		D23DB1DC1C046D9C00101E04 /* HFCompressHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DB1DB1C046D9C00101E04 /* HFCompressHelper.m */; };
@@ -61,6 +64,12 @@
 		D21D3DCF1BEB002F00202FA9 /* HFHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpRequest.h; sourceTree = "<group>"; };
 		D21D3DD21BEB004800202FA9 /* HFHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpRequest.m; sourceTree = "<group>"; };
 		D21D3DD41BEB038100202FA9 /* HFHttpTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HFHttpTypes.h; sourceTree = "<group>"; };
+		D2257AC81D2D142E009A7CC0 /* HFInterceptHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HFInterceptHelper.h; path = HFInterceptor/HFInterceptor/HFInterceptHelper.h; sourceTree = "<group>"; };
+		D2257AC91D2D142E009A7CC0 /* HFInterceptHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HFInterceptHelper.m; path = HFInterceptor/HFInterceptor/HFInterceptHelper.m; sourceTree = "<group>"; };
+		D2257ACA1D2D142E009A7CC0 /* HFInterceptObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HFInterceptObj.h; path = HFInterceptor/HFInterceptor/HFInterceptObj.h; sourceTree = "<group>"; };
+		D2257ACB1D2D142E009A7CC0 /* HFInterceptObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HFInterceptObj.m; path = HFInterceptor/HFInterceptor/HFInterceptObj.m; sourceTree = "<group>"; };
+		D2257ACC1D2D142E009A7CC0 /* NSObject+Interceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Interceptor.h"; path = "HFInterceptor/HFInterceptor/NSObject+Interceptor.h"; sourceTree = "<group>"; };
+		D2257ACD1D2D142E009A7CC0 /* NSObject+Interceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Interceptor.m"; path = "HFInterceptor/HFInterceptor/NSObject+Interceptor.m"; sourceTree = "<group>"; };
 		D239D1011BE1FE3C0081A973 /* HFFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFFileUtil.m; sourceTree = "<group>"; };
 		D239D10A1BE2008A0081A973 /* HFDirectoryUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFDirectoryUtil.m; sourceTree = "<group>"; };
 		D239D10D1BE209DD0081A973 /* HFDirectoryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFDirectoryUtil.h; sourceTree = "<group>"; };
@@ -131,6 +140,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D2257AC71D2D1415009A7CC0 /* HFInterceptor */ = {
+			isa = PBXGroup;
+			children = (
+				D2257ACA1D2D142E009A7CC0 /* HFInterceptObj.h */,
+				D2257ACB1D2D142E009A7CC0 /* HFInterceptObj.m */,
+				D2257AC81D2D142E009A7CC0 /* HFInterceptHelper.h */,
+				D2257AC91D2D142E009A7CC0 /* HFInterceptHelper.m */,
+				D2257ACC1D2D142E009A7CC0 /* NSObject+Interceptor.h */,
+				D2257ACD1D2D142E009A7CC0 /* NSObject+Interceptor.m */,
+			);
+			name = HFInterceptor;
+			sourceTree = "<group>";
+		};
 		D239D0FF1BE1FDFA0081A973 /* File */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +406,7 @@
 		D2DE60DC1BCBAC0E003A61EB /* Wanderers */ = {
 			isa = PBXGroup;
 			children = (
+				D2257AC71D2D1415009A7CC0 /* HFInterceptor */,
 				D2DE60E41BCBACBE003A61EB /* HFAppHelper.m */,
 				D2DE60DE1BCBAC87003A61EB /* HFDeviceUtil.m */,
 				D2DE60E11BCBACA1003A61EB /* HFSystemUtil.m */,
@@ -529,7 +552,9 @@
 				D2DE60E21BCBACA1003A61EB /* HFSystemUtil.m in Sources */,
 				D2F815081BE7722800CF500B /* HFTaskBase.m in Sources */,
 				D2CB08F21BC8FCD800B7A761 /* HFLogUtil.m in Sources */,
+				D2257ACF1D2D142E009A7CC0 /* HFInterceptObj.m in Sources */,
 				D23DB1EC1C0471B300101E04 /* HFANRDetection.m in Sources */,
+				D2257ACE1D2D142E009A7CC0 /* HFInterceptHelper.m in Sources */,
 				D239D1021BE1FE3C0081A973 /* HFFileUtil.m in Sources */,
 				D23DB1DC1C046D9C00101E04 /* HFCompressHelper.m in Sources */,
 				D29903661C7598640050B0B9 /* HFANRMonitor.m in Sources */,
@@ -539,6 +564,7 @@
 				D2DE60DB1BCBA0E6003A61EB /* NSDate+DisplayString.m in Sources */,
 				D292EFAB1BFEF6DE00D79BF4 /* HFRandomUtil.m in Sources */,
 				D2F815181BE7730E00CF500B /* HFHttpQueue.m in Sources */,
+				D2257AD01D2D142E009A7CC0 /* NSObject+Interceptor.m in Sources */,
 				D2534E331BF1F3580001A9F6 /* HFEncodeHelper.m in Sources */,
 				D2CB09011BC909D300B7A761 /* HFLogFileWriter.m in Sources */,
 				D2142C5A1BE363FE00F8B8BF /* HFDigestHelper.m in Sources */,
