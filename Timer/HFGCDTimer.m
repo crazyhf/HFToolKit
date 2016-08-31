@@ -51,6 +51,8 @@
 {
     if (NO == self.isValid || NO == self.isSuspended) return;
     
+    self.isSuspended = NO;
+    
     uint64_t anInterval = self.interval * NSEC_PER_SEC;
     
     dispatch_time_t aStartTime = dispatch_time(DISPATCH_TIME_NOW,
@@ -64,8 +66,6 @@
                                   aStartTime,
                                   DISPATCH_TIME_FOREVER, 0);
     }
-    
-    self.isSuspended = NO;
     
     dispatch_resume(self.dispatchTimer);
 }
