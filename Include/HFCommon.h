@@ -105,6 +105,35 @@
 
 ///=================================================================
 
+#pragma mark - safe invoke
+
+#define HFInvoke4Delegate(_delegate_, _selector_) \
+        if (nil != (_delegate_) && \
+            YES == [(_delegate_) respondsToSelector:(_selector_)]) @autoreleasepool
+
+#define HFInvoke4DelegateArg0(_delegate_, _selector_) \
+        if (nil != (_delegate_) && \
+            YES == [(_delegate_) respondsToSelector:(_selector_)]) { \
+            _Pragma("clang diagnostic push") \
+            _Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+            [(_delegate) performSelector:(_selector_)]; \
+            _Pragma("clang diagnostic pop") \
+        }
+
+#define HFInvoke4Block(_block_) if (nil != (_block_)) @autoreleasepool
+
+
+///=================================================================
+
+#pragma mark - autorelease loop snippet
+
+#define HFAutoRelease_for(...) for (__VA_ARGS__) @autoreleasepool
+
+#define HFAutoRelease_while(...) while (__VA_ARGS__) @autoreleasepool
+
+
+///=================================================================
+
 #pragma mark - weak self macro
 
 #define HFWeakSelf()      __weak typeof(self) hfWeakSelf = self

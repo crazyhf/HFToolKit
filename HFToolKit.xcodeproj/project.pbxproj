@@ -18,6 +18,7 @@
 		D23DB1EC1C0471B300101E04 /* HFANRDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DB1E91C0471B300101E04 /* HFANRDetection.m */; };
 		D23DB1ED1C0471B300101E04 /* HFNetworkMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DB1EA1C0471B300101E04 /* HFNetworkMonitor.m */; };
 		D2534E331BF1F3580001A9F6 /* HFEncodeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2534E321BF1F3580001A9F6 /* HFEncodeHelper.m */; };
+		D25CB25B1D76C9DC001035CD /* HFGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = D25CB25A1D76C9DC001035CD /* HFGCDTimer.m */; };
 		D287571D1BECA82100FB728F /* HFHttpParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D287571C1BECA82100FB728F /* HFHttpParam.m */; };
 		D292EFAB1BFEF6DE00D79BF4 /* HFRandomUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D292EFAA1BFEF6DE00D79BF4 /* HFRandomUtil.m */; };
 		D29903661C7598640050B0B9 /* HFANRMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = D29903651C7598640050B0B9 /* HFANRMonitor.m */; };
@@ -85,6 +86,8 @@
 		D23DB1EA1C0471B300101E04 /* HFNetworkMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFNetworkMonitor.m; sourceTree = "<group>"; };
 		D2534E321BF1F3580001A9F6 /* HFEncodeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFEncodeHelper.m; sourceTree = "<group>"; };
 		D2534E341BF1F3780001A9F6 /* HFEncodeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFEncodeHelper.h; sourceTree = "<group>"; };
+		D25CB25A1D76C9DC001035CD /* HFGCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFGCDTimer.m; sourceTree = "<group>"; };
+		D25CB25C1D76C9F5001035CD /* HFGCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFGCDTimer.h; sourceTree = "<group>"; };
 		D284D7B51BCD0135003808E2 /* HFInnerLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFInnerLog.h; sourceTree = "<group>"; };
 		D28757191BECA80100FB728F /* HFHttpParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFHttpParam.h; sourceTree = "<group>"; };
 		D287571C1BECA82100FB728F /* HFHttpParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFHttpParam.m; sourceTree = "<group>"; };
@@ -266,6 +269,22 @@
 			path = SNS;
 			sourceTree = "<group>";
 		};
+		D25CB2571D76C9AD001035CD /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				D25CB25A1D76C9DC001035CD /* HFGCDTimer.m */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		D25CB2581D76C9CC001035CD /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				D25CB25C1D76C9F5001035CD /* HFGCDTimer.h */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 		D29BDADF1B666C6E006F18B8 = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +293,7 @@
 				D2CB08E71BC8C06D00B7A761 /* Log */,
 				D239D0FF1BE1FDFA0081A973 /* File */,
 				D2F814E51BE70C1900CF500B /* Http */,
+				D25CB2571D76C9AD001035CD /* Timer */,
 				D2CB08E81BC8C06D00B7A761 /* Security */,
 				D23DB1E61C0471B300101E04 /* Services */,
 				D23DB1DA1C046D9C00101E04 /* Compress */,
@@ -335,6 +355,7 @@
 				D2CB08EA1BC8C09900B7A761 /* Log */,
 				D239D10C1BE209DD0081A973 /* File */,
 				D2F814E61BE70C3300CF500B /* Http */,
+				D25CB2581D76C9CC001035CD /* Timer */,
 				D2CB08EB1BC8C09900B7A761 /* Security */,
 				D23DB1E01C04717500101E04 /* Services */,
 				D2CB08E91BC8C09900B7A761 /* Extension */,
@@ -560,6 +581,7 @@
 				D29903661C7598640050B0B9 /* HFANRMonitor.m in Sources */,
 				D29BDAEE1B666C6E006F18B8 /* HFToolKit.m in Sources */,
 				D2CB08FE1BC909C300B7A761 /* HFLogStdOutWriter.m in Sources */,
+				D25CB25B1D76C9DC001035CD /* HFGCDTimer.m in Sources */,
 				D239D10B1BE2008A0081A973 /* HFDirectoryUtil.m in Sources */,
 				D2DE60DB1BCBA0E6003A61EB /* NSDate+DisplayString.m in Sources */,
 				D292EFAB1BFEF6DE00D79BF4 /* HFRandomUtil.m in Sources */,
