@@ -10,6 +10,8 @@
 
 #import "HFLogUtil.h"
 
+#import "HFGCDTimer.h"
+
 #import "HFTaskQueue.h"
 #import "HFHttpQueue.h"
 
@@ -19,11 +21,15 @@
 #import "HFDigestHelper.h"
 #import "HFDirectoryUtil.h"
 
-#import "HFANRDetection.h"
+#import "HFCompressHelper.h"
+#import "HFANRMonitor.h"
+//#import "HFANRDetection.h"
 #import "HFNetworkMonitor.h"
 
 
 @interface ViewController ()
+
+@property (nonatomic, strong) HFGCDTimer * gcdTimer;
 
 @property (nonatomic, strong) HFTaskQueue * serialQueue;
 
@@ -65,8 +71,34 @@
     
     [[HFNetworkMonitor sharedInstance] enableMonitor];
     
+    NSData * testData =  [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"post_file" ofType:@"txt"]];
+    testData = [HFCompressHelper zlibDeflate:testData gzipHeader:YES];
+    
+    NSData * testData1 =  [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"post_file" ofType:@"txt"]];
+    testData1 = [HFCompressHelper zlibDeflate:testData1 gzipHeader:NO];
+    
+//    [testData writeToFile:@"Users/crazylhf/Desktop/xxx_zip" atomically:YES];
+    
     HFLogi(@"XXX", @"[HFAppHelper isAppBeingTraced] : %d", [HFAppHelper isAppBeingTraced]);
     HFLogi(@"XXX", @"[HFAppHelper isDebugingOrSuspension:%u] : %d", [HFSystemUtil processID], [HFAppHelper isDebugingOrSuspension:[HFSystemUtil processID]]);
+    
+    HFLogi(@"Timer", @"HFGCDTimer");
+    
+    HFWeakSelf();
+    self.gcdTimer = [[HFGCDTimer alloc] initWithInterval:8 actionBlock:^{
+        HFLogi(@"Timer", @"HFGCDTimer");
+    } willRepeat:YES];
+    [self.gcdTimer start];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        HFLogi(@"Timer", @"HFGCDTimer suspend");
+        [hfWeakSelf.gcdTimer suspend];
+    });
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(22 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        HFLogi(@"Timer", @"HFGCDTimer start");
+        [hfWeakSelf.gcdTimer start];
+    });
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -77,9 +109,10 @@
         HFHttpParam * httpParam = [[HFHttpParam alloc] init];
 //        [httpParam addParamKey:@"test" paramValue:@"test_value"];
         
-        [httpRequest httpGET:@"http://localhost:8080/travel_1.jpg" param:httpParam];
+        [httpRequest httpGET:@"http://localhost:8080/travel_1.jpg?xxxx" param:httpParam];
         
-        [[HFANRDetection sharedInstance] enableDetection];
+        //[[HFANRDetection sharedInstance] enableDetection];
+        [HFANRMonitor sharedInstance];
     } finished:^(NSInteger respCode, NSData *respData, NSError *respErr) {
         NSLog(@"respCode[%@] respDataLen[%@] respErr[%@]", @(respCode), @(respData.length), respErr);
         if (0 != respData.length) {
@@ -87,8 +120,10 @@
             aImageView.image = [UIImage imageWithData:respData];
             [self.view addSubview:aImageView];
         }
-        [[HFANRDetection sharedInstance] enableDetection];
-        [[HFANRDetection sharedInstance] enableDetection];
+        //[[HFANRDetection sharedInstance] enableDetection];
+        //[[HFANRDetection sharedInstance] enableDetection];
+        [[HFANRMonitor sharedInstance] enableMonitor];
+        NSLog(@"xxx");
     }];
     
     [[HFHttpQueue sharedInstance] addRequest:^(HFHttpRequest *httpRequest) {
@@ -107,12 +142,17 @@
         NSLog(@"respCode[%@] respData[%@] respErr[%@]", @(respCode), [[NSString alloc] initWithData:respData encoding:NSUTF8StringEncoding], respErr);
     }];
     
-    [[HFANRDetection sharedInstance] setANRNotifyBlock:^{
+    [[HFANRMonitor sharedInstance] setANRNotifyHandler:^(NSTimeInterval blockDuration) {
         NSLog(@"ui thread is blocked");
-        [self testThreadBlock1];
+//        [self testThreadBlock1];
+//        [[HFANRMonitor sharedInstance] disableMonitor];
     } dispatchQueue:dispatch_get_global_queue(0, DISPATCH_QUEUE_PRIORITY_DEFAULT)];
+//    [[HFANRDetection sharedInstance] setANRNotifyBlock:^{
+//        NSLog(@"ui thread is blocked");
+//        [self testThreadBlock1];
+//    } dispatchQueue:dispatch_get_global_queue(0, DISPATCH_QUEUE_PRIORITY_DEFAULT)];
     
-    [self testUIThreadBlock0];
+//    [self testUIThreadBlock0];
 }
 
 - (void)testUIThreadBlock0

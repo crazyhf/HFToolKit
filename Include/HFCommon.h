@@ -43,6 +43,17 @@
 
 ///=================================================================
 
+#pragma mark - syntax sugar
+
+#define __lack_braces__         @autoreleasepool
+
+#define __lack_at_use_inner__   autoreleasepool{}
+
+#define __lack_at_use_outter__  class __strawman_class__;
+
+
+///=================================================================
+
 #pragma mark - enum macro
 
 #define HF_ENUM_HEAD(_enum_type_, _enum_name_) \
@@ -109,7 +120,7 @@
 
 #define HFInvoke4Delegate(_delegate_, _selector_) \
         if (nil != (_delegate_) && \
-            YES == [(_delegate_) respondsToSelector:(_selector_)]) @autoreleasepool
+            YES == [(_delegate_) respondsToSelector:(_selector_)]) __lack_braces__
 
 #define HFInvoke4DelegateArg0(_delegate_, _selector_) \
         if (nil != (_delegate_) && \
@@ -120,16 +131,16 @@
             _Pragma("clang diagnostic pop") \
         }
 
-#define HFInvoke4Block(_block_) if (nil != (_block_)) @autoreleasepool
+#define HFInvoke4Block(_block_) if (nil != (_block_)) __lack_braces__
 
 
 ///=================================================================
 
 #pragma mark - autorelease loop snippet
 
-#define HFAutoRelease_for(...) for (__VA_ARGS__) @autoreleasepool
+#define FOR(...) __lack_at_use_inner__ for (__VA_ARGS__) __lack_braces__
 
-#define HFAutoRelease_while(...) while (__VA_ARGS__) @autoreleasepool
+#define WHILE(...) __lack_at_use_inner__ while (__VA_ARGS__) __lack_braces__
 
 
 ///=================================================================
