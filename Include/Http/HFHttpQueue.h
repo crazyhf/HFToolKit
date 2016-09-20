@@ -9,12 +9,9 @@
 #import "HFTaskQueue.h"
 #import "HFHttpRequest.h"
 
-@interface HFHttpQueue : NSObject
+@interface HFHttpQueue : NSObject <HFSingleton>
 
 - (void)addRequest:(void(^)(HFHttpRequest * httpRequest))requestBlock
           finished:(void(^)(NSInteger respCode, NSData * respData, NSError * respErr))finishedBlock;
-
-
-HF_DECLARE_SINGLETON()
 
 @end

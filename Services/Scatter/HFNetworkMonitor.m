@@ -213,6 +213,6 @@ static void HFNetworkReachabilityCallback(SCNetworkReachabilityRef target,
     }
 }
 
-HF_IMPLEMENTATION_SINGLETON()
+@singleton
 
 @end

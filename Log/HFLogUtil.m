@@ -88,6 +88,6 @@
     self.logWriter = nil;
 }
 
-HF_IMPLEMENTATION_SINGLETON()
+@singleton
 
 @end

@@ -101,10 +101,14 @@
 
 #pragma mark - singleton macro
 
-#define HF_DECLARE_SINGLETON() \
-            + (instancetype)sharedInstance;
+@protocol HFSingleton <NSObject>
 
-#define HF_IMPLEMENTATION_SINGLETON() \
++ (instancetype)sharedInstance;
+
+@end
+
+#define singleton \
+            __lack_at_use_outter__ \
             + (instancetype)sharedInstance \
             { \
                 static id _instance = nil; \

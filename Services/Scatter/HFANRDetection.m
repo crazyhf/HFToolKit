@@ -170,6 +170,6 @@
 }
 
 
-HF_IMPLEMENTATION_SINGLETON()
+@singleton
 
 @end

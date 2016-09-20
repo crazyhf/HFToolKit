@@ -16,14 +16,12 @@ typedef void(^anr_notify_block_t)(void);
 /**
  *  @brief detection for ANR(application not responding)
  */
-@interface HFANRDetection : NSObject
+@interface HFANRDetection : NSObject <HFSingleton>
 
 - (void)enableDetection;
 
 - (void)setANRNotifyBlock:(anr_notify_block_t)anrNotifyBlock
             dispatchQueue:(dispatch_queue_t)dispatchQueue;
 
-
-HF_DECLARE_SINGLETON()
 
 @end

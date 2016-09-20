@@ -24,7 +24,7 @@ HF_ENUM_TAIL(HFNetworkType)
 /**
  *  @brief network state monitor
  */
-@interface HFNetworkMonitor : NSObject
+@interface HFNetworkMonitor : NSObject <HFSingleton>
 
 @property (nonatomic, assign) BOOL isMonitoring;
 
@@ -37,10 +37,5 @@ HF_ENUM_TAIL(HFNetworkType)
 
 
 - (HFNetworkType)forceDetectNetwork;
-
-
-#pragma mark - singleton
-
-HF_DECLARE_SINGLETON()
 
 @end

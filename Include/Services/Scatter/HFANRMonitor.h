@@ -17,7 +17,7 @@ typedef void(^anr_notify_handle_t)(NSTimeInterval blockDuration);
 /**
  *  @brief detection for ANR(application not responding) by means of CFRunLoopAddObserver
  */
-@interface HFANRMonitor : NSObject
+@interface HFANRMonitor : NSObject <HFSingleton>
 
 @property (nonatomic, assign) NSTimeInterval anrThreshold;
 
@@ -27,7 +27,5 @@ typedef void(^anr_notify_handle_t)(NSTimeInterval blockDuration);
 - (void)enableMonitor;
 
 - (void)disableMonitor;
-
-HF_DECLARE_SINGLETON()
 
 @end
