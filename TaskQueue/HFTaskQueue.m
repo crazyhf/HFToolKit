@@ -30,9 +30,9 @@
 {
     if (YES == self.isTaskListEmpty) return;
     
-    HFWeakSelf();
+    @weakSelf();
     dispatch_async(self.taskQueue, ^{
-        HFTaskBase * taskBase = [hfWeakSelf popTask];
+        HFTaskBase * taskBase = [weakSelf popTask];
         while (nil != taskBase)
         {
             id taskResult = nil;
@@ -45,12 +45,12 @@
             }
             
             if (nil != taskBase.finishedBlock) {
-                dispatch_async(hfWeakSelf.finishedQueue, ^{
+                dispatch_async(weakSelf.finishedQueue, ^{
                     taskBase.finishedBlock(taskResult);
                 });
             }
             
-            taskBase = [hfWeakSelf popTask];
+            taskBase = [weakSelf popTask];
         }
     });
 }

@@ -84,7 +84,7 @@
     
     HFLogi(@"Timer", @"HFGCDTimer");
     
-    HFWeakSelf();
+    @weakSelf();
     self.gcdTimer = [[HFGCDTimer alloc] initWithInterval:8 actionBlock:^{
         HFLogi(@"Timer", @"HFGCDTimer");
     } willRepeat:YES];
@@ -92,12 +92,12 @@
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         HFLogi(@"Timer", @"HFGCDTimer suspend");
-        [hfWeakSelf.gcdTimer suspend];
+        [weakSelf.gcdTimer suspend];
     });
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(22 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         HFLogi(@"Timer", @"HFGCDTimer start");
-        [hfWeakSelf.gcdTimer start];
+        [weakSelf.gcdTimer start];
     });
 }
 

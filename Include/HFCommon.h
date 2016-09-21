@@ -151,6 +151,6 @@
 
 #pragma mark - weak self macro
 
-#define HFWeakSelf()      __weak typeof(self) hfWeakSelf = self
+#define weakSelf()  __lack_at_use_inner__ __weak typeof(self) weakSelf = self;
 
 #endif /* HFCommon_h */

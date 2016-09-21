@@ -43,31 +43,31 @@
 
 - (void)generateRunLoopANRObserver
 {
-    HFWeakSelf();
+    @weakSelf();
     _observerHandler = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, kCFRunLoopAllActivities, true, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
         
-        if (nil == hfWeakSelf) return;
+        if (nil == weakSelf) return;
         
         switch (activity) {
             case kCFRunLoopEntry: case kCFRunLoopBeforeTimers:
             case kCFRunLoopBeforeSources: case kCFRunLoopAfterWaiting:
             {
-                if (0 == hfWeakSelf.startTick) {
-                    hfWeakSelf.startTick = mach_absolute_time();
+                if (0 == weakSelf.startTick) {
+                    weakSelf.startTick = mach_absolute_time();
                 }
                 break;
             }
                 
             case kCFRunLoopExit: case kCFRunLoopBeforeWaiting:
             {
-                uint64_t elapsedTick = mach_absolute_time() - hfWeakSelf.startTick;
+                uint64_t elapsedTick = mach_absolute_time() - weakSelf.startTick;
                 
-                NSTimeInterval elapsedDuration = (NSTimeInterval)elapsedTick * hfWeakSelf.secondsPerTick;
-                if (elapsedDuration > hfWeakSelf.anrThreshold) {
-                    [hfWeakSelf notifyMainThreadANR:elapsedDuration];
+                NSTimeInterval elapsedDuration = (NSTimeInterval)elapsedTick * weakSelf.secondsPerTick;
+                if (elapsedDuration > weakSelf.anrThreshold) {
+                    [weakSelf notifyMainThreadANR:elapsedDuration];
                 }
                 
-                hfWeakSelf.startTick = 0;
+                weakSelf.startTick = 0;
                 break;
             }
                 
@@ -101,9 +101,9 @@
 
 - (void)notifyMainThreadANR:(NSTimeInterval)blockDuration
 {
-    HFWeakSelf();
+    @weakSelf();
     dispatch_async(self.notifyDispatchQueue, ^{
-        anr_notify_handle_t aNotifyHandler = hfWeakSelf.anrNotifyHandler;
+        anr_notify_handle_t aNotifyHandler = weakSelf.anrNotifyHandler;
         if (nil != aNotifyHandler) {
             aNotifyHandler(blockDuration);
         }
