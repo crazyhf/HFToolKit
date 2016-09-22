@@ -11,11 +11,38 @@
 
 ///=================================================================
 
+#pragma mark - syntax sugar
+
+#ifdef DEBUG
+#define __compoundify__         @autoreleasepool
+#else
+#define __compoundify__
+#endif
+
+#ifdef DEBUG
+#define __keywordify_inner__    autoreleasepool{}
+#else
+#define __keywordify_inner__    try{} @catch(...){}
+#endif
+
+#define __keywordify_outter__   class __strawman_class__;
+
+#define __stringify__(_text_)   #_text_
+
+#define WARN(_msg_) __keywordify_outter__ _Pragma(__stringify__(GCC warning #_msg_))
+
+#define MSG(_msg_)  __keywordify_outter__ _Pragma(__stringify__(message #_msg_))
+
+#define TODO(_msg_) __keywordify_inner__  _Pragma(__stringify__(message #_msg_))
+
+
+///=================================================================
+
 #pragma mark - string macro
 
-#define ReverseDNSIdentify(_identify_) "com.crazylhf.hftoolkit."#_identify_
+#define ReverseDNSIdentify(_identify_) "com.crazylhf.hftoolkit."__stringify__(_identify_)
 
-#define ReverseDNSOCIdentify(_identify_) @"com.crazylhf.hftoolkit."@#_identify_
+#define ReverseDNSOCIdentify(_identify_) @"com.crazylhf.hftoolkit."@__stringify__(_identify_)
 
 #define ExternReverseDNSString(_string_name_) extern NSString * const _string_name_
 #define DefineReverseDNSString(_string_name_) \
@@ -39,17 +66,6 @@
             DefineReverseDNSString(_notify_key_)
 
 #define HF_NotifyCenter   [NSNotificationCenter defaultCenter]
-
-
-///=================================================================
-
-#pragma mark - syntax sugar
-
-#define __lack_braces__         @autoreleasepool
-
-#define __lack_at_use_inner__   autoreleasepool{}
-
-#define __lack_at_use_outter__  class __strawman_class__;
 
 
 ///=================================================================
@@ -108,7 +124,7 @@
 @end
 
 #define singleton \
-            __lack_at_use_outter__ \
+            __keywordify_outter__ \
             + (instancetype)sharedInstance \
             { \
                 static id _instance = nil; \
@@ -124,7 +140,7 @@
 
 #define HFInvoke4Delegate(_delegate_, _selector_) \
         if (nil != (_delegate_) && \
-            YES == [(_delegate_) respondsToSelector:(_selector_)]) __lack_braces__
+            YES == [(_delegate_) respondsToSelector:(_selector_)]) __compoundify__
 
 #define HFInvoke4DelegateArg0(_delegate_, _selector_) \
         if (nil != (_delegate_) && \
@@ -135,22 +151,22 @@
             _Pragma("clang diagnostic pop") \
         }
 
-#define HFInvoke4Block(_block_) if (nil != (_block_)) __lack_braces__
+#define HFInvoke4Block(_block_) if (nil != (_block_)) __compoundify__
 
 
 ///=================================================================
 
 #pragma mark - autorelease loop snippet
 
-#define FOR(...) __lack_at_use_inner__ for (__VA_ARGS__) __lack_braces__
+#define FOR(...) __keywordify_inner__ for (__VA_ARGS__) @autoreleasepool
 
-#define WHILE(...) __lack_at_use_inner__ while (__VA_ARGS__) __lack_braces__
+#define WHILE(...) __keywordify_inner__ while (__VA_ARGS__) @autoreleasepool
 
 
 ///=================================================================
 
 #pragma mark - weak self macro
 
-#define weakSelf()  __lack_at_use_inner__ __weak typeof(self) weakSelf = self;
+#define weakSelf()  __keywordify_inner__ __weak typeof(self) weakSelf = self;
 
 #endif /* HFCommon_h */
