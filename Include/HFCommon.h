@@ -10,6 +10,14 @@
 #define HFCommon_h
 
 ///=================================================================
+/// #error      test error message0
+/// #warning    test warning message0
+/// #pragma message "test tip message0"
+/// #pragma message("test tip message1")
+/// #pragma GCC error "test error message1"
+/// #pragma GCC error("test error message2")
+/// #pragma GCC warning "test warning message1"
+/// #pragma GCC warning("test warning message2")
 
 #pragma mark - syntax sugar
 
@@ -29,11 +37,11 @@
 
 #define __stringify__(_text_)   #_text_
 
-#define WARN(_msg_) __keywordify_outter__ _Pragma(__stringify__(GCC warning #_msg_))
-
 #define MSG(_msg_)  __keywordify_outter__ _Pragma(__stringify__(message #_msg_))
 
 #define TODO(_msg_) __keywordify_inner__  _Pragma(__stringify__(message #_msg_))
+
+#define WARN(_msg_) __keywordify_outter__ _Pragma(__stringify__(GCC warning #_msg_))
 
 
 ///=================================================================
