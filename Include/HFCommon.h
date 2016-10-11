@@ -37,9 +37,9 @@
 
 #define __stringify__(_text_)   #_text_
 
-#define MSG(_msg_)  __keywordify_outter__ _Pragma(__stringify__(message #_msg_))
-
 #define TODO(_msg_) __keywordify_inner__  _Pragma(__stringify__(message #_msg_))
+
+#define MSG(_msg_)  __keywordify_outter__ _Pragma(__stringify__(message #_msg_))
 
 #define WARN(_msg_) __keywordify_outter__ _Pragma(__stringify__(GCC warning #_msg_))
 

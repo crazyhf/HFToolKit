@@ -26,6 +26,8 @@
 //#import "HFANRDetection.h"
 #import "HFNetworkMonitor.h"
 
+@WARN(test warn message)
+@MSG(test  tip message)
 
 @interface ViewController ()
 
@@ -41,6 +43,7 @@
 
 - (void)viewDidLoad
 {
+    @TODO(test to do warn message)
     [super viewDidLoad];
     
     NSLog(@"test");
